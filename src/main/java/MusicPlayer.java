@@ -29,14 +29,19 @@ public class MusicPlayer {
          */
         try {
 
+            // Add notes in the form of the form <octave><note>
+            // e.g. "4C" for middle C
+
+            // The second input parameter to playNote() is the duration in milliseconds
+            // The input parameter to rest() is also in milliseconds
+
             twinkle();
 
-// Other examples:
-//            playNote("C4", 1000);
-//            rest(500);
-//            playNote("D4", MusicApp.MAX_VOLUME, 1000);
-//            playNote("D#4", 500);
-//            rest(600);
+            playNote("C4", 1000);
+            rest(500);
+            playNote("D4", MusicApp.MAX_VOLUME, 1000);
+            playNote("D#4", 500);
+            rest(600);
 
         } catch(InterruptedException e) {
             e.printStackTrace();
