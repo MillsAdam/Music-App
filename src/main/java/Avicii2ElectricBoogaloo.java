@@ -2,9 +2,8 @@ import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
-import java.util.List;
 
-public class Avicii {
+public class Avicii2ElectricBoogaloo {
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
@@ -13,7 +12,7 @@ public class Avicii {
     int instrument;
     int volume;
 
-    public Avicii (int instrument, int volume) {
+    public Avicii2ElectricBoogaloo(int instrument, int volume) {
 
         this.instrument = instrument;
         this.volume = volume;
