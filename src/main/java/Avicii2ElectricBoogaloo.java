@@ -31,84 +31,117 @@ public class Avicii2ElectricBoogaloo {
 
     public void levels() throws InterruptedException
     {
-        introMelodyOne();
-        introMelodyTwo();
-        introChordOne();
-        introChordOne();
-        combineIntroMelodyChordOne();
-        verseMelodyOne();
-        verseMelodyTwo();
-        verseMelodyThree();
-        verseMelodyFour();
-        verseChordOne();
-        verseChordTwo();
-        combineVerseMelodyChordOne();
+        combineLeftHandRightHand();
     }
 
-    public void introMelodyOne() throws InterruptedException
+    public void rightHandOctave5() throws InterruptedException
     {
-        // bar 1
-        playNote("F#4");
-        playNote("E4");
-        playNote("E4");
-        rest(238);
-        playNote("E4");
-        playNote("E4");
-        playNote("E4");
-        playNote("E4");
-        // bar 2
-        playNote("D#4");
-        playNote("D#4");
-        playNote("E4");
-        playNote("E4");
-        rest(238);
-        playNote("C#5");
-        playNote("B4");
-        playNote("G#4");
-        System.out.println();
+        // block 1
+        playNote("E5", 952);
+        playNote("E5", 952);
+        playNote("D#5", 714);
+        playNote("E5", 1190);
+        // block 2
+        playNote("B5", 952);
+        playNote("G#5", 952);
+        playNote("F#5", 476);
+        // block 3
+        playNote("G#5", 238);
+        playNote("E5", 1190);
+        playNote("E5", 952);
+        playNote("E5", 952);
+        // block 4
+        playNote("D#5", 714);
+        playNote("E5", 1190);
+        playNote("B5", 952);
+        // block 5
+        playNote("G#5", 952);
+        playNote("F#5", 476);
+        playNote("G#5", 238);
+        playNote("E5", 476);
+        playNote("C#5", 3808);
     }
 
-    public void introMelodyTwo() throws InterruptedException
+    public void rightHandOctave4() throws InterruptedException
     {
-        // bar 1
-        playNote("F#4");
-        playNote("E4");
-        playNote("E4");
-        rest(238);
-        playNote("E4");
-        playNote("E4");
-        playNote("E4");
-        playNote("E4");
-        // bar 2
-        playNote("C#4");
-        playNote("C#4");
-        playNote("B3");
-        playNote("B3");
-        rest(238);
-        playNote("C#5");
-        playNote("B4");
-        playNote("G#4");
-        System.out.println();
+        // block 1
+        playNote("E4", 952);
+        playNote("E4", 952);
+        playNote("D#4", 714);
+        playNote("E4", 1190);
+        // block 2
+        playNote("B4", 952);
+        playNote("G#4", 952);
+        playNote("F#4", 476);
+        // block 3
+        playNote("G#4", 238);
+        playNote("E4", 1190);
+        playNote("E4", 952);
+        playNote("E4", 952);
+        // block 4
+        playNote("D#4", 714);
+        playNote("E4", 1190);
+        playNote("B4", 952);
+        // block 5
+        playNote("G#4", 952);
+        playNote("F#4", 476);
+        playNote("G#4", 238);
+        playNote("E4", 714);
+        playNote("B4", 238);
+        playNote("G#4", 238);
+        playNote("F#4", 238);
     }
 
-    public void introChordOne() throws InterruptedException
+    public void leftHandOctave3() throws InterruptedException
     {
-        // bar 1
-        playChord("C#3", "C#4", "E4", "G#4", 952);
-        // bar 2
-        playChord("E3", "B3", "E4", "G#4", 952);
-        // bar 3
-        playChord("B2", "B3", "D#3", "F#3", 714);
-        // bar 4
-        playChord("A2", "C#4", "E4", "A4", 1190);
-        System.out.println();
+        // block 1
+        playNote("C#3", 952);
+        playNote("E3", 2856);
+        // block 2
+        playNote("C#3", 952);
+        playNote("E3", 2856);
+        // block 3
+        playNote("C#3", 952);
+        playNote("E3", 2856);
+        // block 4
+        playNote("C#3", 952);
+        // block 5
+        playNote("E3", 2856);
+        playNote("C#3", 238);
     }
 
-    public void combineIntroMelodyChordOne() throws InterruptedException {
+    public void leftHandOctave2() throws InterruptedException
+    {
+        // block 1
+        playNote("C#2", 952);
+        playNote("E2", 952);
+        playNote("B2", 714);
+        playNote("A2", 1190);
+        // block 2
+        playNote("C#2", 952);
+        playNote("E2", 952);
+        playNote("B2", 714);
+        // block 3
+        playNote("A2", 1190);
+        playNote("C#2", 952);
+        playNote("E2", 952);
+        // block 4
+        playNote("B2", 714);
+        playNote("A2", 1190);
+        playNote("C#2", 952);
+        // block 5
+        playNote("E2", 952);
+        playNote("B2", 714);
+        playNote("A2", 1190);
+        playNote("C#2", 238);
+    }
+
+
+
+    public void combineLeftHandRightHand() throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                introChordOne();
-                introChordOne();
+                rightHandOctave5();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -116,138 +149,42 @@ public class Avicii2ElectricBoogaloo {
 
         Thread thread2 = new Thread(() -> {
             try {
-                introMelodyOne();
-                introMelodyTwo();
+                rightHandOctave4();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         });
 
-        // Start the threads to play melody1 and chord1 simultaneously
+        Thread thread3 = new Thread(() -> {
+            try {
+                leftHandOctave3();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread thread4 = new Thread(() -> {
+            try {
+                leftHandOctave2();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        // Start the threads to play simultaneously
         thread1.start();
         thread2.start();
+        thread3.start();
+        thread4.start();
 
         // Wait for both threads to finish
         thread1.join();
         thread2.join();
-        System.out.println();
+        thread3.join();
+        thread4.join();
     }
 
-    public void verseMelodyOne() throws InterruptedException
-    {
-        playNote("G#5", 714);
-        playNote("F#5", 952);
-        playNote("E5", 238);
-        playNote("C#5",1190);
-        playNote("B4", 238);
-        playNote("G#4", 119);
-        playNote("F#4", 119);
-        playNote("E4", 238);
-        System.out.println();
-    }
 
-    public void verseMelodyTwo() throws InterruptedException
-    {
-        playNote("C#5", 238);
-        playNote("C#5", 476);
-        rest(952);
-        playNote("E4", 238);
-        playNote("C#4", 476);
-        rest(1428);
-        System.out.println();
-    }
-
-    public void verseMelodyThree() throws InterruptedException
-    {
-        rest(476);
-        playNote("B5", 238);
-        playNote("G#5", 238);
-        playNote("B5", 238);
-        playNote("B5", 238);
-        playNote("G#5", 238);
-        playNote("G#5", 238);
-        playNote("C#6", 238);
-        playNote("C#6", 119);
-        playNote("B5", 238);
-        playNote("B5", 119);
-        playNote("G5", 119);
-        playNote("F#5", 238);
-        rest(119);
-        playNote("F#5", 119);
-        playNote("E5", 119);
-        playNote("F#5", 238);
-        playNote("C#5", 119);
-        playNote("B4", 119);
-        System.out.println();
-    }
-
-    public void verseMelodyFour() throws InterruptedException
-    {
-        playNote("C#4", 476);
-        playNote("E4", 238);
-        playNote("C4", 476);
-        playNote("B4", 238);
-        playNote("G#4", 119);
-        playNote("F#4", 119);
-        playNote("E4", 238);
-        playNote("C#5", 238);
-        playNote("C#5", 476);
-        playNote("E4", 238);
-        playNote("C#4", 476);
-        rest(476);
-        System.out.println();
-    }
-
-    public void verseChordOne() throws InterruptedException
-    {
-        playChord("C#3", "C#4", "F#4", "G#4", 952);
-        playChord("F3", "B3", "F4", "G#4", 952);
-        playChord("B2", "B3", "D#4", "F#4", 714);
-        playChord("A2", "C#4", "E4", "A4", 1190);
-        System.out.println();
-    }
-
-    public void verseChordTwo() throws InterruptedException
-    {
-        playChord("C#3", "C#4", "F#4", "G#4", 952);
-        playChord("F3", "B3", "F4", "G#4", 952);
-        playChord("B2", "B3", "D#4", "F#4", 714);
-        playChord("A2", "B3", "C#4", "E4", 1190);
-        System.out.println();
-    }
-
-    public void combineVerseMelodyChordOne() throws InterruptedException {
-        Thread thread1 = new Thread(() -> {
-            try {
-                verseChordOne();
-                verseChordTwo();
-                verseChordOne();
-                verseChordTwo();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-
-        Thread thread2 = new Thread(() -> {
-            try {
-                verseMelodyOne();
-                verseMelodyTwo();
-                verseMelodyThree();
-                verseMelodyFour();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-
-        // Start the threads to play melody1 and chord1 simultaneously
-        thread1.start();
-        thread2.start();
-
-        // Wait for both threads to finish
-        thread1.join();
-        thread2.join();
-        System.out.println();
-    }
 
 
 
