@@ -11,15 +11,20 @@ public class MusicApp {
         /*
          * Play piano tones
          */
-        int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-        MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
-        player.run();
+//        int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
+//        MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
+//        player.run();
+//
+//        /*
+//         * Play drum tones
+//         */
+//        volume = MAX_VOLUME;
+//        player = new MusicPlayer(INSTRUMENT_DRUM, volume);
+//        player.run();
 
-        /*
-         * Play drum tones
-         */
-        volume = MAX_VOLUME;
-        player = new MusicPlayer(INSTRUMENT_DRUM, volume);
+
+        int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
+        Avicii player = new Avicii(INSTRUMENT_PIANO, volume);
         player.run();
 
     }

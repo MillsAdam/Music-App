@@ -37,11 +37,11 @@ public class MusicPlayer {
 
             twinkle();
 
-            playNote("C4", 1000);
-            rest(500);
-            playNote("D4", MusicApp.MAX_VOLUME, 1000);
-            playNote("D#4", 500);
-            rest(600);
+//            playNote("C4", 1000);
+//            rest(500);
+//            playNote("D4", MusicApp.MAX_VOLUME, 1000);
+//            playNote("D#4", 500);
+//            rest(600);
 
         } catch(InterruptedException e) {
             e.printStackTrace();
