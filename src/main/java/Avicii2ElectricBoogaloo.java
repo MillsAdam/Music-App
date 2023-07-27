@@ -60,6 +60,9 @@ public class Avicii2ElectricBoogaloo {
         playNote("G#5", 238);
         playNote("E5", 476);
         playNote("C#5", 3808);
+        // block 6
+        playNote("C#5", 238);
+        // block 7
     }
 
     public void rightHandOctave4() throws InterruptedException
@@ -90,6 +93,18 @@ public class Avicii2ElectricBoogaloo {
         playNote("B4", 238);
         playNote("G#4", 238);
         playNote("F#4", 238);
+        // block 6
+        playNote("E4", 238);
+        playNote("E4", 476);
+        playNote("E4", 238);
+        playNote("E4", 238);
+        playNote("E4", 238);
+        playNote("E4", 238);
+        playNote("D#4", 238);
+        playNote("D#4", 238);
+        playNote("E4", 238);
+        playNote("E4", 3570);
+        // block 7
     }
 
     public void leftHandOctave3() throws InterruptedException
@@ -108,6 +123,14 @@ public class Avicii2ElectricBoogaloo {
         // block 5
         playNote("E3", 2856);
         playNote("C#3", 238);
+        // block 6
+        playNote("C#3", 238);
+        playNote("C#3", 476);
+        playNote("E3", 238);
+        playNote("E3", 238);
+        playNote("E3", 238);
+        playNote("E3", 2142);
+        // block 7
     }
 
     public void leftHandOctave2() throws InterruptedException
@@ -134,6 +157,19 @@ public class Avicii2ElectricBoogaloo {
         playNote("B2", 714);
         playNote("A2", 1190);
         playNote("C#2", 238);
+        // block 6
+        playNote("C#2", 238);
+        playNote("C#2", 476);
+        playNote("E2", 238);
+        playNote("E2", 238);
+        playNote("E2", 238);
+        playNote("E2", 238);
+        playNote("B2", 238);
+        playNote("B2", 238);
+        playNote("B2", 238);
+        playNote("A2", 476);
+        playNote("A2", 238);
+        // block 7
     }
 
 
