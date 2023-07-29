@@ -34,34 +34,521 @@ public class AviciiMain {
         combineAll();
     }
 
+
+    // *****************SOMETHING IS OFF SOMEWHERE********************
+
+
+
+
+
     public void rightHandOctave6() throws InterruptedException
     {
-
+        // block 1
+        rest(3094);
+        // block 2
+        rest(3094);
+        // block 3
+        rest(3094);
+        // block 4
+        rest(3094);
+        // block 5
+        rest(3094);
+        // block 6
+        rest(3094);
+        // block 7
+        rest(3094);
+        // block 8
+        rest(3094);
+        // block 9
+        rest(3094);
+        // block 10
+        rest(3094);
+        // block 11
+        rest(3094);
+        // block 12
+        rest(3094);
     }
 
     public void rightHandOctave5() throws InterruptedException
     {
-
+        // block 1
+        playNote("E5");
+        rest(714);
+        playNote("E5");
+        rest(714);
+        playNote("D#5");
+        rest(476);
+        playNote("E5");
+        rest(238);
+        // block 2
+        rest(714);
+        playNote("B5");
+        rest(714);
+        playNote("D#5");
+        rest(714);
+        playNote("F#5");
+        rest(238);
+        // block 3
+        playNote("G#5");
+        playNote("E5");
+        rest(952);
+        playNote("E5");
+        rest(714);
+        playNote("E5");
+        rest(476);
+        // block 4
+        rest(238);
+        playNote("D#5");
+        rest(476);
+        playNote("E5");
+        rest(952);
+        playNote("B5");
+        rest(714);
+        // block 5
+        playNote("G#5");
+        rest(714);
+        playNote("F#5");
+        rest(238);
+        playNote("G#5");
+        playNote("E5");
+        rest(238);
+        playNote("C#5");
+        rest(714);
+        // block 6
+        rest(2856);
+        playNote("C#5");
+        // block 7
+        rest(3094);
+        // block 8
+        rest(476);
+        playNote("C#5");
+        rest(2380);
+        // block 9
+        rest(1190);
+        playNote("C#5");
+        rest(1666);
+        // block 10
+        rest(1904);
+        playNote("C#5");
+        rest(952);
+        // block 11
+        rest(2618);
+        playNote("C#5");
+        rest(238);
+        // block 12
+        rest(3094);
     }
 
     public void rightHandOctave4() throws InterruptedException
     {
-
+        // block 1
+        playNote("E4");
+        rest(714);
+        playNote("E4");
+        rest(714);
+        playNote("D#4");
+        rest(476);
+        playNote("E4");
+        rest(238);
+        // block 2
+        rest(714);
+        playNote("B4");
+        rest(714);
+        playNote("G#4");
+        rest(714);
+        playNote("F#4");
+        rest(238);
+        // block 3
+        playNote("G#4");
+        playNote("E4");
+        rest(952);
+        playNote("E4");
+        rest(714);
+        playNote("E4");
+        rest(476);
+        // block 4
+        rest(238);
+        playNote("D#4");
+        rest(476);
+        playNote("E4");
+        rest(952);
+        playNote("B4");
+        rest(714);
+        // block 5
+        playNote("G#4");
+        rest(714);
+        playNote("F#4");
+        rest(714);
+        playNote("G#4");
+        playNote("E4");
+        rest(476);
+        playNote("B4");
+        playNote("G#4");
+        playNote("F#4");
+        // block 6
+        playNote("E4");
+        playNote("E4");
+        rest(238);
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("D#4");
+        playNote("D#4");
+        playNote("E4");
+        playNote("E4");
+        rest(476);
+        // block 7
+        playNote("B4");
+        playNote("G#4");
+        playNote("F#4");
+        playNote("E4");
+        playNote("E4");
+        rest(238);
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("C#4");
+        playNote("C#4");
+        rest(238);
+        // block 8
+        rest(714);
+        playNote("B4");
+        playNote("G#4");
+        playNote("F#4");
+        playNote("E4");
+        playNote("E4");
+        rest(238);
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        // block 9
+        playNote("D#4");
+        playNote("D#4");
+        playNote("E4");
+        playNote("E4");
+        rest(476);
+        playNote("B4");
+        playNote("G#4");
+        playNote("F#4");
+        playNote("E4");
+        playNote("E4");
+        rest(238);
+        playNote("E4");
+        // block 10
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("C#4");
+        playNote("C#4");
+        rest(952);
+        playNote("B4");
+        playNote("G#4");
+        playNote("F#4");
+        playNote("E4");
+        // block 11
+        playNote("E4");
+        rest(238);
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("D#4");
+        playNote("D#4");
+        playNote("E4");
+        playNote("E4");
+        rest(476);
+        playNote("B4");
+        // block 12
+        playNote("G#4");
+        playNote("F#4");
+        playNote("E4");
+        playNote("E4");
+        rest(238);
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("C#4");
+        playNote("C#4");
+        rest(476);
     }
 
     public void rightHandOctave3() throws InterruptedException
     {
-
+        // block 1
+        rest(3094);
+        // block 2
+        rest(3094);
+        // block 3
+        rest(3094);
+        // block 4
+        rest(3094);
+        // block 5
+        rest(3094);
+        // block 6
+        rest(3094);
+        // block 7
+        rest(3094);
+        // block 8
+        playNote("B3");
+        rest(2856);
+        // block 9
+        rest(3094);
+        // block 10
+        rest(1190);
+        playNote("B3");
+        playNote("B3");
+        rest(1428);
+        // block 11
+        rest(3094);
+        // block 12
+        rest(2618);
+        playNote("B3");
+        playNote("B3");
     }
 
     public void leftHandOctave3() throws InterruptedException
     {
-
+        // block 1
+        playNote("C#3");
+        rest(714);
+        playNote("E3");
+        rest(1904);
+        // block 2
+        rest(714);
+        playNote("C#3");
+        rest(714);
+        playNote("E3");
+        rest(1190);
+        // block 3
+        rest(1428);
+        playNote("C#3");
+        rest(714);
+        playNote("E3");
+        rest(476);
+        // block 4
+        rest(2142);
+        playNote("C#3");
+        rest(714);
+        // block 5
+        playNote("E3");
+        rest(2618);
+        playNote("C#3");
+        // block 6
+        playNote("C#3");
+        playNote("C#3");
+        rest(238);
+        playNote("E3");
+        playNote("E3");
+        playNote("E3");
+        playNote("E3");
+        rest(1428);
+        // block 7
+        rest(476);
+        playNote("C#3");
+        playNote("C#3");
+        playNote("C#3");
+        rest(238);
+        playNote("E3");
+        playNote("E3");
+        playNote("E3");
+        playNote("E3");
+        rest(714);
+        // block 8
+        rest(1190);
+        playNote("C#3");
+        playNote("C#3");
+        playNote("C#3");
+        rest(238);
+        playNote("E3");
+        playNote("E3");
+        playNote("E3");
+        playNote("E3");
+        // block 9
+        rest(1904);
+        playNote("C#3");
+        playNote("C#3");
+        playNote("C#3");
+        rest(238);
+        playNote("E3");
+        // block 10
+        playNote("E3");
+        playNote("E3");
+        playNote("E3");
+        rest(1904);
+        playNote("C#3");
+        rest(119); // short rest
+        playNote("C#3"); // extended
+        // block 11
+        rest(119); // short rest
+        playNote("C#3");
+        playNote("E3");
+        rest(119); // short rest
+        playNote("E3");
+        rest(119); // short rest
+        playNote("E3");
+        rest(1666);
+        // block 12
+        rest(238);
+        playNote("C#3");
+        rest(119); // short rest
+        playNote("C#3");
+        rest(119); // short rest
+        playNote("C#3");
+        playNote("E3");
+        rest(119); // short rest
+        playNote("E3");
+        rest(952);
     }
 
     public void leftHandOctave2() throws InterruptedException
     {
-
+        // block 1
+        playNote("C#2");
+        rest(714);
+        playNote("E2");
+        rest(714);
+        playNote("B2");
+        rest(476);
+        playNote("A2");
+        rest(238);
+        // block 2
+        rest(714);
+        playNote("C#2");
+        rest(714);
+        playNote("E2");
+        rest(714);
+        playNote("B2");
+        rest(238);
+        // block 3
+        rest(238);
+        playNote("A2");
+        rest(952);
+        playNote("C#2");
+        rest(714);
+        playNote("E2");
+        rest(476);
+        // block 4
+        rest(238);
+        playNote("B2");
+        rest(476);
+        playNote("A2");
+        rest(952);
+        playNote("C#2");
+        rest(714);
+        // block 5
+        playNote("E2");
+        rest(714);
+        playNote("B2");
+        rest(476);
+        playNote("A2");
+        rest(952);
+        playNote("C#2");
+        // block 6
+        playNote("C#2");
+        playNote("C#2");
+        rest(238);
+        playNote("E2");
+        playNote("E2");
+        playNote("E2");
+        playNote("E2");
+        playNote("B2");
+        playNote("B2");
+        playNote("B2");
+        playNote("A2");
+        rest(238);
+        playNote("A2");
+        // block 7
+        playNote("A2");
+        playNote("A2");
+        playNote("C#2");
+        playNote("C#2");
+        playNote("C#2");
+        rest(238);
+        playNote("E2");
+        playNote("E2");
+        playNote("E2");
+        playNote("E2");
+        playNote("B2");
+        playNote("B2");
+        playNote("B2");
+        // block 8
+        playNote("A2");
+        rest(238);
+        playNote("A2");
+        playNote("A2");
+        playNote("A2");
+        playNote("C#2");
+        playNote("C#2");
+        playNote("C#2");
+        rest(238);
+        playNote("E2");
+        playNote("E2");
+        playNote("E2");
+        playNote("E2");
+        // block 9
+        playNote("B2");
+        playNote("B2");
+        playNote("B2");
+        playNote("A2");
+        rest(238);
+        playNote("A2");
+        playNote("A2");
+        playNote("A2");
+        playNote("C#2");
+        playNote("C#2");
+        playNote("C#2");
+        rest(238);
+        playNote("E2");
+        // block 10
+        playNote("E2");
+        playNote("E2");
+        playNote("E2");
+        playNote("B2");
+        playNote("B2");
+        playNote("B2");
+        playNote("A2");
+        rest(238);
+        playNote("A2");
+        playNote("A2");
+        playNote("A2");
+        playNote("C#2");
+        rest(119); // short rest
+        playNote("C#2"); // extended
+        // block 11
+        rest(119); // short rest
+        playNote("C#2");
+        playNote("E2");
+        rest(119); // short rest
+        playNote("E2");
+        rest(119); // short rest
+        playNote("E2");
+        playNote("B2");
+        playNote("B2");
+        playNote("B2");
+        playNote("A2");
+        rest(238);
+        playNote("A2");
+        playNote("A2");
+        // block 12
+        playNote("A2");
+        playNote("C#2");
+        rest(119); // short rest
+        playNote("C#2");
+        rest(119); // short rest
+        playNote("C#2");
+        playNote("E2");
+        rest(119); // short rest
+        playNote("E2");
+        rest(119); // short rest
+        playNote("E2");
+        playNote("B2");
+        playNote("B2");
+        playNote("B2");
+        playNote("A2");
     }
 
 
