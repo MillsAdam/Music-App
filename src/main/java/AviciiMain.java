@@ -2,6 +2,11 @@ import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class AviciiMain {
 
@@ -11,6 +16,8 @@ public class AviciiMain {
     MidiChannel[] channels;
     int instrument;
     int volume;
+
+    private List<String[]> rightHandOctave6Array = new ArrayList<>();
 
     public AviciiMain(int instrument, int volume) {
 
@@ -66,6 +73,14 @@ public class AviciiMain {
         // block 11
         rest(3094);
         // block 12
+        rest(3094);
+        // block 13
+        rest(3094);
+        // block 14
+        rest(3094);
+        // block 15
+        rest(3094);
+        // block 16
         rest(3094);
     }
 
@@ -137,6 +152,23 @@ public class AviciiMain {
         rest(238);
         // block 12
         rest(3094);
+        // block 13
+        rest(238);
+        playNote("C#5");
+        rest(2618);
+        // block 14
+        rest(952);
+        playNote("C#5");
+        rest(1904);
+        // block 15
+        rest(1666);
+        playNote("C#5");
+        playNote("C#5");
+        playNote("C#5");
+        playNote("C#5");
+        rest(476);
+        // block 16
+        rest(3094);
     }
 
     public void rightHandOctave4() throws InterruptedException
@@ -178,7 +210,7 @@ public class AviciiMain {
         playNote("G#4");
         rest(714);
         playNote("F#4");
-        rest(714);
+        rest(238);
         playNote("G#4");
         playNote("E4");
         rest(476);
@@ -274,6 +306,55 @@ public class AviciiMain {
         playNote("C#4");
         playNote("C#4");
         rest(476);
+        // block 13
+        rest(476);
+        playNote("B4");
+        playNote("G#4");
+        playNote("F#4");
+        playNote("E4");
+        playNote("E4");
+        rest(238);
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("D#4");
+        // block 14
+        playNote("D#4");
+        playNote("E4");
+        playNote("E4");
+        rest(476);
+        playNote("B4");
+        playNote("G#4");
+        playNote("F#4");
+        playNote("E4");
+        playNote("E4");
+        rest(238);
+        playNote("E4");
+        playNote("E4");
+        // block 15
+        playNote("E4");
+        playNote("E4");
+        playNote("C#4");
+        playNote("C#4");
+        rest(714);
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        playNote("E4");
+        rest(476);
+        // block 16
+        playChord2("B4", "E4", 238);
+        rest(714);
+        playChord2("G#4", "E4", 238);
+        playChord2("F#4", "E4", 238);
+        rest(238);
+        playChord2("G#4", "E4", 238);
+        playNote("E4", 238);
+        rest(238);
+        playNote("E4");
+        playNote("E4");
+        playNote("C#4");
     }
 
     public void rightHandOctave3() throws InterruptedException
@@ -308,6 +389,17 @@ public class AviciiMain {
         rest(2618);
         playNote("B3");
         playNote("B3");
+        // block 13
+        rest(3094);
+        // block 14
+        rest(3094);
+        // block 15
+        rest(952);
+        playNote("B3");
+        playNote("B3");
+        rest(1666);
+        // block 16
+        rest(3094);
     }
 
     public void leftHandOctave3() throws InterruptedException
@@ -401,7 +493,42 @@ public class AviciiMain {
         playNote("E3");
         rest(119); // short rest
         playNote("E3");
+        rest(119); // short rest
+        playNote("E3");
         rest(952);
+        // block 13
+        rest(952);
+        playNote("C#3");
+        rest(119); // short rest
+        playNote("C#3");
+        rest(119); // short rest
+        playNote("C#3");
+        playNote("E3");
+        rest(119); // short rest
+        playNote("E3");
+        rest(119); // short rest
+        playNote("E3");
+        rest(238);
+        // block 14
+        rest(1666);
+        playNote("C#3");
+        rest(119); // short rest
+        playNote("C#3");
+        rest(119); // short rest
+        playNote("C#3");
+        playNote("E3");
+        rest(119); // short rest
+        playNote("E3"); // extended
+        // block 15
+        rest(119); // short rest
+        playNote("E3");
+        rest(1904);
+        playNote("C#3");
+        rest(476);
+        // block 16
+        rest(238);
+        playNote("E3");
+        rest(2618);
     }
 
     public void leftHandOctave2() throws InterruptedException
@@ -549,6 +676,59 @@ public class AviciiMain {
         playNote("B2");
         playNote("B2");
         playNote("A2");
+        // block 13
+        rest(238);
+        playNote("A2");
+        playNote("A2");
+        playNote("A2");
+        playNote("C#2");
+        rest(119); // short rest
+        playNote("C#2");
+        rest(119); // short rest
+        playNote("C#2");
+        playNote("E2");
+        rest(119); // short rest
+        playNote("E2");
+        rest(119); // short rest
+        playNote("E2");
+        playNote("B2");
+        // block 14
+        playNote("B2");
+        playNote("B2");
+        playNote("A2");
+        rest(238);
+        playNote("A2");
+        playNote("A2");
+        playNote("A2");
+        playNote("C#2");
+        rest(119); // short rest
+        playNote("C#2");
+        rest(119); // short rest
+        playNote("C#2");
+        playNote("E2");
+        rest(119); // short rest
+        playNote("E2"); // extended
+        // block 15
+        rest(119); // short rest
+        playNote("E2");
+        playNote("B2");
+        playNote("B2");
+        playNote("B2");
+        playNote("A2");
+        rest(238);
+        playNote("A2");
+        playNote("A2");
+        playNote("A2");
+        playNote("C#2");
+        rest(476);
+        // block 16
+        rest(238);
+        playNote("E2");
+        rest(714);
+        playNote("B2");
+        rest(476);
+        playNote("A2");
+        rest(952);
     }
 
 
@@ -627,12 +807,41 @@ public class AviciiMain {
 
 
     // ********** playChord METHODS **********
-    private void playChord(String note1, String note2, String note3, String note4, int durationMs) throws InterruptedException {
-        System.out.print("\t" + note1 + "\t\t" + note2 + "\t\t" + note3 + "\t\t" + note4 + "\t");
-        playChord(note1, note2, note3, note4, this.volume, durationMs);;
+    private void playChord2(String note1, String note2, int durationMs) throws InterruptedException {
+        System.out.print("\t" + note1 + "\t\t" + note2 + "\t");
+        playChord2(note1, note2, this.volume, durationMs);
     }
 
-    public void playChord(String note1, String note2, String note3, String note4, int volume, int durationMs) throws InterruptedException {
+
+    private void playChord2(String note1, String note2, int volume, int durationMs) throws InterruptedException {
+        System.out.print("\t" + note1 + "\t\t" + note2 + "\t");
+        playChord2(note1, note2, volume, durationMs);;
+
+        int[] midiNotes = {getMidiNumber(note1), getMidiNumber(note2)};
+
+        for (int midiNote : midiNotes) {
+            if (midiNote != -1) {
+                channels[this.instrument].noteOn(midiNote, volume);
+            }
+        }
+
+        // wait for specified duration
+        Thread.sleep(durationMs);
+
+        for (int midiNote : midiNotes) {
+            if (midiNote != -1) {
+                channels[this.instrument].noteOff(midiNote);
+            }
+        }
+    }
+
+
+    private void playChord4(String note1, String note2, String note3, String note4, int durationMs) throws InterruptedException {
+        System.out.print("\t" + note1 + "\t\t" + note2 + "\t\t" + note3 + "\t\t" + note4 + "\t");
+        playChord4(note1, note2, note3, note4, this.volume, durationMs);;
+    }
+
+    private void playChord4(String note1, String note2, String note3, String note4, int volume, int durationMs) throws InterruptedException {
 
         int[] midiNotes = {getMidiNumber(note1), getMidiNumber(note2), getMidiNumber(note3), getMidiNumber(note4)};
 
