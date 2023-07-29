@@ -3,7 +3,7 @@ import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 
-public class Avicii2ElectricBoogaloo {
+public class AviciiMain {
 
     // Instance variables
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
@@ -12,7 +12,7 @@ public class Avicii2ElectricBoogaloo {
     int instrument;
     int volume;
 
-    public Avicii2ElectricBoogaloo(int instrument, int volume) {
+    public AviciiMain(int instrument, int volume) {
 
         this.instrument = instrument;
         this.volume = volume;
@@ -31,154 +31,45 @@ public class Avicii2ElectricBoogaloo {
 
     public void levels() throws InterruptedException
     {
-        combineLeftHandRightHand();
+        combineAll();
     }
 
+    public void rightHandOctave6() throws InterruptedException
+    {
+
+    }
 
     public void rightHandOctave5() throws InterruptedException
     {
-        // block 1
-        playNote("E5", 952);
-        playNote("E5", 952);
-        playNote("D#5", 714);
-        playNote("E5", 1190);
-        // block 2
-        playNote("B5", 952);
-        playNote("G#5", 952);
-        playNote("F#5", 476);
-        // block 3
-        playNote("G#5", 238);
-        playNote("E5", 1190);
-        playNote("E5", 952);
-        playNote("E5", 952);
-        // block 4
-        playNote("D#5", 714);
-        playNote("E5", 1190);
-        playNote("B5", 952);
-        // block 5
-        playNote("G#5", 952);
-        playNote("F#5", 476);
-        playNote("G#5", 238);
-        playNote("E5", 476);
-        playNote("C#5", 3808);
-        // block 6
-        playNote("C#5", 238);
-        // block 7
+
     }
 
     public void rightHandOctave4() throws InterruptedException
     {
-        // block 1
-        playNote("E4", 952);
-        playNote("E4", 952);
-        playNote("D#4", 714);
-        playNote("E4", 1190);
-        // block 2
-        playNote("B4", 952);
-        playNote("G#4", 952);
-        playNote("F#4", 476);
-        // block 3
-        playNote("G#4", 238);
-        playNote("E4", 1190);
-        playNote("E4", 952);
-        playNote("E4", 952);
-        // block 4
-        playNote("D#4", 714);
-        playNote("E4", 1190);
-        playNote("B4", 952);
-        // block 5
-        playNote("G#4", 952);
-        playNote("F#4", 476);
-        playNote("G#4", 238);
-        playNote("E4", 714);
-        playNote("B4", 238);
-        playNote("G#4", 238);
-        playNote("F#4", 238);
-        // block 6
-        playNote("E4", 238);
-        playNote("E4", 476);
-        playNote("E4", 238);
-        playNote("E4", 238);
-        playNote("E4", 238);
-        playNote("E4", 238);
-        playNote("D#4", 238);
-        playNote("D#4", 238);
-        playNote("E4", 238);
-        playNote("E4", 3570);
-        // block 7
+
+    }
+
+    public void rightHandOctave3() throws InterruptedException
+    {
+
     }
 
     public void leftHandOctave3() throws InterruptedException
     {
-        // block 1
-        playNote("C#3", 952);
-        playNote("E3", 2856);
-        // block 2
-        playNote("C#3", 952);
-        playNote("E3", 2856);
-        // block 3
-        playNote("C#3", 952);
-        playNote("E3", 2856);
-        // block 4
-        playNote("C#3", 952);
-        // block 5
-        playNote("E3", 2856);
-        playNote("C#3", 238);
-        // block 6
-        playNote("C#3", 238);
-        playNote("C#3", 476);
-        playNote("E3", 238);
-        playNote("E3", 238);
-        playNote("E3", 238);
-        playNote("E3", 2142);
-        // block 7
+
     }
 
     public void leftHandOctave2() throws InterruptedException
     {
-        // block 1
-        playNote("C#2", 952);
-        playNote("E2", 952);
-        playNote("B2", 714);
-        playNote("A2", 1190);
-        // block 2
-        playNote("C#2", 952);
-        playNote("E2", 952);
-        playNote("B2", 714);
-        // block 3
-        playNote("A2", 1190);
-        playNote("C#2", 952);
-        playNote("E2", 952);
-        // block 4
-        playNote("B2", 714);
-        playNote("A2", 1190);
-        playNote("C#2", 952);
-        // block 5
-        playNote("E2", 952);
-        playNote("B2", 714);
-        playNote("A2", 1190);
-        playNote("C#2", 238);
-        // block 6
-        playNote("C#2", 238);
-        playNote("C#2", 476);
-        playNote("E2", 238);
-        playNote("E2", 238);
-        playNote("E2", 238);
-        playNote("E2", 238);
-        playNote("B2", 238);
-        playNote("B2", 238);
-        playNote("B2", 238);
-        playNote("A2", 476);
-        playNote("A2", 238);
-        // block 7
+
     }
 
 
 
-    public void combineLeftHandRightHand() throws InterruptedException {
+    public void combineAll() throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                rightHandOctave5();
+                rightHandOctave6();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -186,7 +77,7 @@ public class Avicii2ElectricBoogaloo {
 
         Thread thread2 = new Thread(() -> {
             try {
-                rightHandOctave4();
+                rightHandOctave5();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -194,13 +85,29 @@ public class Avicii2ElectricBoogaloo {
 
         Thread thread3 = new Thread(() -> {
             try {
-                leftHandOctave3();
+                rightHandOctave4();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         });
 
         Thread thread4 = new Thread(() -> {
+            try {
+                rightHandOctave3();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread thread5 = new Thread(() -> {
+            try {
+                leftHandOctave3();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread thread6 = new Thread(() -> {
             try {
                 leftHandOctave2();
             } catch (InterruptedException e) {
@@ -213,12 +120,16 @@ public class Avicii2ElectricBoogaloo {
         thread2.start();
         thread3.start();
         thread4.start();
+        thread5.start();
+        thread6.start();
 
         // Wait for both threads to finish
         thread1.join();
         thread2.join();
         thread3.join();
         thread4.join();
+        thread5.join();
+        thread6.join();
     }
 
 
