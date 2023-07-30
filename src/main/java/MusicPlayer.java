@@ -8,7 +8,9 @@ import javax.sound.midi.Synthesizer;
  */
 public class MusicPlayer {
 
-
+    // TODO File Reader
+    // TODO Convert to List of Arrays
+    // TODO if certain .length, then play rest / note / chord
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 

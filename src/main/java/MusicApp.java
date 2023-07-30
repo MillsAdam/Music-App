@@ -24,7 +24,7 @@ public class MusicApp {
 
 
         int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-        MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
+        Avicii2ElectricBoogaloo player = new Avicii2ElectricBoogaloo(INSTRUMENT_PIANO, volume);
         player.run();
 
     }
