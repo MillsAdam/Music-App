@@ -48,13 +48,153 @@ public class Avicii2ElectricBoogaloo {
 
     public void rightHand() throws InterruptedException
     {
-
+        // bar 1
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        // bar 2
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        // bar 3
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        // bar 4
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playChord2("G#5", "E5", 238);
+        playNote("C#5", 238);
+        playNote("G#5", 119);
+        playNote("E5", 119);
+        playNote("C#5", 119);
+        playNote("G#4", 119);
+        playNote("G#4", 119);
+        playNote("E4", 119);
+        playNote("C#4", 119);
+        playNote("G#3", 119);
+        // bar 5
+        rest(238);
+        playChord3("E4", "C#4", "G#3", 238);
+        playChord3("E4", "C#4", "G#3", 238);
+        rest(238);
+        playChord3("E4", "B3", "G#3", 238);
+        playChord3("E4", "B3", "G#3", 238);
+        playChord3("E4", "B3", "G#3", 238);
+        playChord3("E4", "B3", "G#3", 238);
+        // bar 6
+        playChord3("D#4", "B3", "F#3", 238);
+        playChord3("D#4", "B3", "F#3", 238);
+        playChord3("E4", "B3", "F#3", 238);
+        playChord3("E4", "C#4", "A3", 238);
+        rest(238);
+        playChord2("C#5", "E4", 238);
+        playChord2("B4", "E4", 238);
+        playChord2("G#4", "E4", 238);
+        // bar 7
+        playChord3("F#4", "C#4", "G#3", 238);
+        playChord3("E4", "C#4", "G#3", 238);
+        playChord3("E4", "C#4", "G#3", 238);
+        rest(238);
+        playChord3("E4", "B3", "G#3", 238);
+        playChord3("E4", "B3", "G#3", 238);
+        playChord3("E4", "B3", "G#3", 238);
+        playChord3("E4", "B3", "G#3", 238);
+        // bar 8
+        playChord2("C#4", "F#3", 238);
+        playChord2("C#4", "F#3", 238);
+        playNote("B3", 238);
+        playNote("B3", 238);
+        rest(238);
+        playChord2("C#5", "E4", 238);
+        playChord2("B4", "E4", 238);
+        playChord2("G#4", "E4", 238);
     }
 
 
     public void leftHand() throws InterruptedException
     {
-
+        // bar 1
+        playChord2("G#4", "E4", 476);
+        playChord2("G#4", "E4", 476);
+        playChord2("G#4", "E4", 476);
+        playChord2("G#4", "E4", 476);
+        // bar 2
+        playChord2("G#4", "E4", 476);
+        playChord2("G#4", "E4", 476);
+        playChord2("G#4", "E4", 476);
+        playChord2("G#4", "E4", 476);
+        // bar 3
+        playChord2("E4", "C#3", 238);
+        playChord2("E4", "C#3", 238);
+        playChord2("E4", "C#3", 238);
+        playChord2("E4", "C#3", 238);
+        playChord2("E4", "C#3", 238);
+        playChord2("E4", "C#3", 238);
+        playChord2("E4", "C#3", 238);
+        playChord2("E4", "C#3", 238);
+        // bar 4
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        // bar 5
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        rest(119);
+        playNote("B2", 119);
+        playChord2("E3", "E2",238);
+        playChord2("E3", "E2",238);
+        playChord2("E3", "E2",238);
+        playChord2("E3", "E2",238);
+        // bar 6
+        playChord2("B2", "B1", 238);
+        playChord2("B2", "B1", 238);
+        playChord2("B2", "B1", 238);
+        playChord2("A2", "A1", 238);
+        rest(238);
+        playChord2("A2", "A1", 238);
+        playChord2("A2", "A1", 238);
+        playChord2("A2", "A1", 238);
+        // bar 7
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        playChord2("C#3", "C#2", 238);
+        rest(119);
+        playNote("B2", 119);
+        playChord2("E3", "E2",238);
+        playChord2("E3", "E2",238);
+        playChord2("E3", "E2",238);
+        playChord2("E3", "E2",238);
+        // bar 8
+        playChord2("B2", "B1", 238);
+        playChord2("B2", "B1", 238);
+        playChord2("B2", "B1", 238);
+        playChord2("A2", "A1", 238);
+        rest(238);
+        playChord2("A2", "A1", 238);
+        playChord2("A2", "A1", 238);
+        playChord2("A2", "A1", 238);
     }
 
 
