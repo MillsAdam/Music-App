@@ -24,7 +24,7 @@ public class MusicApp {
 
 
         int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-        AviciiMain player = new AviciiMain(INSTRUMENT_PIANO, volume);
+        MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
         player.run();
 
     }
