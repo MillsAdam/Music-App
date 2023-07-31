@@ -41,16 +41,20 @@ public class Avicii2ElectricBoogaloo {
 
     public void rightHandTxt() throws InterruptedException
     {
-        List<String[]> listOfRightHandArray = new ArrayList<>();
         int rightBarCounter = 0;
 
         // Page 1 = Bars 1- 16
         // Page 2 = Bars 17 - 40
-        String[] files = {"LevelsSheets/LevelsRightHandPage1", "LevelsSheets/LevelsRightHandPage2"};
+        // Page 3 = Bars 41 - 60
+        // Page 4 = Bars 61 - 77
+        // Page 5 = Bars 78 - 100
+        String[] files = {"LevelsSheet/LevelsRHPage1", "LevelsSheet/LevelsRHPage2", "LevelsSheet/LevelsRHPage3",
+                "LevelsSheet/LevelsRHPage4", "LevelsSheet/LevelsRHPage5"};
 
         for (int i = 0; i < files.length; i++)
         {
             File filePath = new File (files[i]);
+            List<String[]> listOfRightHandArray = new ArrayList<>();
 
             try (Scanner fileScanner = new Scanner (filePath))
             {
@@ -60,50 +64,53 @@ public class Avicii2ElectricBoogaloo {
                     String[] splitLineText = lineText.split(" ");
                     listOfRightHandArray.add(splitLineText);
                 }
+                for (String[] txt : listOfRightHandArray)
+                {
+                    if (txt.length == 1)
+                    {
+                        rightBarCounter++;
+                        System.out.print("\nBar " + rightBarCounter + ": ");
+                    }
+                    else if (txt.length == 2)
+                    {
+                        rest(Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 3)
+                    {
+                        playNote(txt[2], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 4)
+                    {
+                        playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
+                    }
+                    else
+                    {
+                        playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
+                    }
+                }
             }
             catch (FileNotFoundException e)
             {
                 throw new RuntimeException(e);
-            }
-
-            for (String[] txt : listOfRightHandArray)
-            {
-                if (txt.length == 1)
-                {
-                    rightBarCounter++;
-                    System.out.print("\nBar " + rightBarCounter + ": ");
-                }
-                else if (txt.length == 2)
-                {
-                    rest(Integer.parseInt(txt[0]));
-                }
-                else if (txt.length == 3)
-                {
-                    playNote(txt[2], Integer.parseInt(txt[0]));
-                }
-                else if (txt.length == 4)
-                {
-                    playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
-                }
-                else
-                {
-                    playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
-                }
             }
         }
     }
 
     public void leftHandTxt() throws InterruptedException
     {
-        List<String[]> listOfLeftHandArray = new ArrayList<>();
 
         // Page 1 = Bars 1- 16
         // Page 2 = Bars 17 - 40
-        String[] files = {"LevelsSheets/LevelsLeftHandPage1", "LevelsSheets/LevelsLeftHandPage2"};
+        // Page 3 = Bars 41 - 60
+        // Page 4 = Bars 61 - 77
+        // Page 5 = Bars 78 - 100
+        String[] files = {"LevelsSheet/LevelsLHPage1", "LevelsSheet/LevelsLHPage2", "LevelsSheet/LevelsLHPage3",
+                "LevelsSheet/LevelsLHPage4", "LevelsSheet/LevelsLHPage5"};
 
         for (int i = 0; i < files.length; i++)
         {
             File filePath = new File (files[i]);
+            List<String[]> listOfLeftHandArray = new ArrayList<>();
 
             try (Scanner fileScanner = new Scanner (filePath))
             {
@@ -113,30 +120,29 @@ public class Avicii2ElectricBoogaloo {
                     String[] splitLineText = lineText.split(" ");
                     listOfLeftHandArray.add(splitLineText);
                 }
+                for (String[] txt : listOfLeftHandArray)
+                {
+                    if (txt.length == 2)
+                    {
+                        rest(Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 3)
+                    {
+                        playNote(txt[2], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 4)
+                    {
+                        playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 5)
+                    {
+                        playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
+                    }
+                }
             }
             catch (FileNotFoundException e)
             {
                 throw new RuntimeException(e);
-            }
-
-            for (String[] txt : listOfLeftHandArray)
-            {
-                if (txt.length == 2)
-                {
-                    rest(Integer.parseInt(txt[0]));
-                }
-                else if (txt.length == 3)
-                {
-                    playNote(txt[2], Integer.parseInt(txt[0]));
-                }
-                else if (txt.length == 4)
-                {
-                    playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
-                }
-                else if (txt.length == 5)
-                {
-                    playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
-                }
             }
         }
     }
