@@ -2,13 +2,16 @@ import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /*
  * https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiChannel.html
  */
 public class Avicii2ElectricBoogaloo {
-
-
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
@@ -36,689 +39,118 @@ public class Avicii2ElectricBoogaloo {
         closeSynth();
     }
 
+    public void rightHandTxt() throws InterruptedException
+    {
+        List<String[]> listOfRightHandArray = new ArrayList<>();
+        int rightBarCounter = 1;
+
+        // Page 1 = Bars 1- 16
+        String[] files = {"LevelsSheets/LevelsRightHandPage1", "LevelsSheets/LevelsRightHandPage2"};
+
+        for (int i = 0; i < files.length; i++)
+        {
+            File filePath = new File (files[i]);
+            try (Scanner fileScanner = new Scanner (filePath))
+            {
+                while (fileScanner.hasNextLine())
+                {
+                    String lineText = fileScanner.nextLine();
+                    String[] splitLineText = lineText.split(" ");
+                    listOfRightHandArray.add(splitLineText);
+                }
+
+                for (String[] txt : listOfRightHandArray)
+                {
+                    if (txt.length == 1)
+                    {
+                        rightBarCounter++;
+                        System.out.print("\n" + txt[0] + " " + rightBarCounter + ": ");
+                    }
+                    else if (txt.length == 2)
+                    {
+                        rest(Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 3)
+                    {
+                        playNote(txt[2], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 4)
+                    {
+                        playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
+                    }
+                    else
+                    {
+                        playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
+    public void leftHandTxt() throws InterruptedException
+    {
+        List<String[]> listOfLeftHandArray = new ArrayList<>();
+
+        // Page 1 = Bars 1- 16
+        String[] files = {"LevelsSheets/LevelsLeftHandPage1", "LevelsSheets/LevelsLeftHandPage2"};
+
+        for (int i = 0; i < files.length; i++)
+        {
+            File filePath = new File (files[i]);
+            try (Scanner fileScanner = new Scanner (filePath))
+            {
+                while (fileScanner.hasNextLine())
+                {
+                    String lineText = fileScanner.nextLine();
+                    String[] splitLineText = lineText.split(" ");
+                    listOfLeftHandArray.add(splitLineText);
+                }
+
+                for (String[] txt : listOfLeftHandArray)
+                {
+                    if (txt.length == 2)
+                    {
+                        rest(Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 3)
+                    {
+                        playNote(txt[2], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 4)
+                    {
+                        playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 5)
+                    {
+                        playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
+    }
 
 
 
     public void levels() throws InterruptedException
     {
+        System.out.print("Bar 1: ");
         combineLeftHandRightHand();
         rest(238);
-    }
-
-
-    public void rightHand() throws InterruptedException
-    {
-        // bar 1
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        System.out.println(); // bar 2
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        System.out.println(); // bar 3
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        System.out.println(); // bar 4
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playChord2("G#5", "E5", 238);
-        playNote("C#5", 238);
-        playNote("G#5", 119);
-        playNote("E5", 119);
-        playNote("C#5", 119);
-        playNote("G#4", 119);
-        playNote("G#4", 119);
-        playNote("E4", 119);
-        playNote("C#4", 119);
-        playNote("G#3", 119);
-        System.out.println(); // bar 5
-        rest(238);
-        playChord3("E4", "C#4", "G#3", 238);
-        playChord3("E4", "C#4", "G#3", 238);
-        rest(238);
-        playChord3("E4", "B3", "G#3", 238);
-        playChord3("E4", "B3", "G#3", 238);
-        playChord3("E4", "B3", "G#3", 238);
-        playChord3("E4", "B3", "G#3", 238);
-        System.out.println(); // bar 6
-        playChord3("D#4", "B3", "F#3", 238);
-        playChord3("D#4", "B3", "F#3", 238);
-        playChord3("E4", "B3", "F#3", 238);
-        playChord3("E4", "C#4", "A3", 238);
-        rest(238);
-        playChord2("C#5", "E4", 238);
-        playChord2("B4", "E4", 238);
-        playChord2("G#4", "E4", 238);
-        System.out.println(); // bar 7
-        playChord3("F#4", "C#4", "G#3", 238);
-        playChord3("E4", "C#4", "G#3", 238);
-        playChord3("E4", "C#4", "G#3", 238);
-        rest(238);
-        playChord3("E4", "B3", "G#3", 238);
-        playChord3("E4", "B3", "G#3", 238);
-        playChord3("E4", "B3", "G#3", 238);
-        playChord3("E4", "B3", "G#3", 238);
-        System.out.println(); // bar 8
-        playChord2("C#4", "F#3", 238);
-        playChord2("C#4", "F#3", 238);
-        playNote("B3", 238);
-        playNote("B3", 238);
-        rest(238);
-        playChord2("C#5", "E4", 238);
-        playChord2("B4", "E4", 238);
-        playChord2("G#4", "E4", 238);
-        System.out.println(); // bar 9
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "F#4", 238);
-        rest(238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 10
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        playChord3("A3", "C#4", "E4", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 11
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        rest(238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 12
-        playChord2("F#3", "C#4", 238);
-        playChord2("F#3", "C#4", 238);
-        playNote("B3", 238);
-        playNote("B3", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 13
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 14
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 15
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 16
-        playChord2("F#3", "C#4", 238);
-        playChord2("F#3", "C#4", 238);
-        playNote("B3", 238);
-        playNote("B3", 476);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 17
-        playChord2("G#3", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 18
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 19
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 20
-        playChord2("F#3", "C#4", 238);
-        playChord2("F#3", "C#4", 238);
-        playNote("B3", 238);
-        playNote("B3", 476);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 21
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 22
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 23
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 24
-        playChord2("F#3", "C#4", 238);
-        playChord2("F#3", "C#4", 238);
-        playNote("B3", 238);
-        playNote("B3", 476);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 25
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 26
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 27
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 28
-        playChord2("F#3", "C#4", 238);
-        playChord2("F#3", "C#4", 238);
-        playNote("B3", 238);
-        playNote("B3", 476);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 29
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 30
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 31
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 32
-        playChord2("F#3", "C#4", 238);
-        playChord2("F#3", "C#4", 238);
-        playNote("B3", 238);
-        playNote("B3", 476);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 33
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 34
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 35
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 36
-        playChord2("F#3", "C#4", 238);
-        playChord2("F#3", "C#4", 238);
-        playNote("B3", 238);
-        playNote("B3", 476);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 37
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 38
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "D#4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        playChord3("F#3", "B3", "E4", 238);
-        rest(238);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-        System.out.println(); // bar 39
-        playChord3("G#3", "C#4", "F#4", 238);
-        playChord3("G#3", "C#4", "E4", 238);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        playChord3("G#3", "B3", "E4", 238);
-        System.out.println(); // bar 40
-        playChord2("F#3", "C#4", 238);
-        playChord2("F#3", "C#4", 238);
-        playNote("B3", 238);
-        playNote("B3", 476);
-        playChord2("E4", "C#5", 238);
-        playChord2("E4", "B4", 238);
-        playChord2("E4", "G#4", 238);
-    }
-
-
-    public void leftHand() throws InterruptedException
-    {
-        // bar 1
-        playChord2("G#4", "E4", 476);
-        playChord2("G#4", "E4", 476);
-        playChord2("G#4", "E4", 476);
-        playChord2("G#4", "E4", 476);
-        // bar 2
-        playChord2("G#4", "E4", 476);
-        playChord2("G#4", "E4", 476);
-        playChord2("G#4", "E4", 476);
-        playChord2("G#4", "E4", 476);
-        // bar 3
-        playChord2("E4", "C#3", 238);
-        playChord2("E4", "C#3", 238);
-        playChord2("E4", "C#3", 238);
-        playChord2("E4", "C#3", 238);
-        playChord2("E4", "C#3", 238);
-        playChord2("E4", "C#3", 238);
-        playChord2("E4", "C#3", 238);
-        playChord2("E4", "C#3", 238);
-        // bar 4
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        // bar 5
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        rest(119);
-        playNote("B2", 119);
-        playChord2("E3", "E2",238);
-        playChord2("E3", "E2",238);
-        playChord2("E3", "E2",238);
-        playChord2("E3", "E2",238);
-        // bar 6
-        playChord2("B2", "B1", 238);
-        playChord2("B2", "B1", 238);
-        playChord2("B2", "B1", 238);
-        playChord2("A2", "A1", 238);
-        rest(238);
-        playChord2("A2", "A1", 238);
-        playChord2("A2", "A1", 238);
-        playChord2("A2", "A1", 238);
-        // bar 7
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        playChord2("C#3", "C#2", 238);
-        rest(119);
-        playNote("B2", 119);
-        playChord2("E3", "E2",238);
-        playChord2("E3", "E2",238);
-        playChord2("E3", "E2",238);
-        playChord2("E3", "E2",238);
-        // bar 8
-        playChord2("B2", "B1", 238);
-        playChord2("B2", "B1", 238);
-        playChord2("B2", "B1", 238);
-        playChord2("A2", "A1", 238);
-        rest(238);
-        playChord2("A2", "A1", 238);
-        playChord2("A2", "A1", 238);
-        playChord2("A2", "A1", 238);
-        // bar 9
-        playChord2("C#2", "C#3", 238);
-        playChord2("C#2", "C#3", 238);
-        playChord2("C#2", "C#3", 238);
-        rest(119);
-        playNote("B2", 119);
-        playChord2("E2", "E3", 238);
-        playChord2("E2", "E3", 238);
-        playChord2("E2", "E3", 238);
-        playChord2("E2", "E3", 238);
-        // bar 10
-        playChord2("B2", "B1", 238);
-        playChord2("B2", "B1", 238);
-        playChord2("B2", "B1", 238);
-        playChord2("A2", "A1", 238);
-        rest(238);
-        playChord2("A2", "A1", 238);
-        playChord2("A2", "A1", 238);
-        playChord2("A2", "A1", 238);
-        // bar 11
-        playChord2("C#2", "C#3", 238);
-        playChord2("C#2", "C#3", 238);
-        playChord2("C#2", "C#3", 238);
-        rest(119);
-        playNote("B2", 119);
-        playChord2("E2", "E3", 238);
-        playChord2("E2", "E3", 238);
-        playChord2("E2", "E3", 238);
-        playChord2("E2", "E3", 238);
-        // bar 12
-        playChord2("B2", "B1", 238);
-        playChord2("B2", "B1", 238);
-        playChord2("B2", "B1", 238);
-        playChord2("A2", "A1", 238);
-        rest(238);
-        playChord2("A2", "A1", 238);
-        playChord2("A2", "A1", 238);
-        playChord2("A2", "A1", 238);
-        // bar 13
-        playNote("C#2", 238);
-        playChord2("G#2", "C#3", 238);
-        playNote("C#2", 238);
-        playChord2("G#2", "C#3", 238);
-        playNote("E2", 238);
-        playChord2("B2", "E3", 238);
-        playNote("E2", 238);
-        playChord2("B2", "E3", 238);
-        // bar 14
-        playNote("B2", 238);
-        playChord2("F#3", "B3", 238);
-        playNote("B2", 238);
-        playChord2("F#3", "B3", 238);
-        playNote("A2", 238);
-        playChord2("E3", "A3", 238);
-        playNote("A2", 238);
-        playChord2("E3", "A3", 238);
-        // bar 15
-        playNote("C#2", 238);
-        playChord2("G#2", "C#3", 238);
-        playNote("C#2", 238);
-        playChord2("G#2", "C#3", 238);
-        playNote("E2", 238);
-        playChord2("B2", "E3", 238);
-        playNote("E2", 238);
-        playChord2("B2", "E3", 238);
-        // bar 16
-        playNote("B2", 238);
-        playChord2("F#3", "B3", 238);
-        playNote("B2", 238);
-        playChord2("F#3", "B3", 238);
-        playNote("A2", 238);
-        playChord2("E3", "A3", 238);
-        playNote("A2", 238);
-        playChord2("E3", "A3", 238);
-        // bar 17
-        playNote("C#2", 238);
-        playChord2("G#2", "C#3", 238);
-        playNote("C#2", 238);
-        playChord2("G#2", "C#3", 238);
-        playNote("E2", 238);
-        playChord2("B2", "E3", 238);
-        playNote("E2", 238);
-        playChord2("B2", "E3", 238);
-        // bar 18
-        playNote("B2", 238);
-        playChord2("F#3", "B3", 238);
-        playNote("B2", 238);
-        playChord2("F#3", "B3", 238);
-        playNote("A2", 238);
-        playChord2("E3", "A3", 238);
-        playNote("A2", 238);
-        playChord2("E3", "A3", 238);
-        // bar 19
-        playNote("C#2", 238);
-        playChord2("G#2", "C#3", 238);
-        playNote("C#2", 238);
-        playChord2("G#2", "C#3", 238);
-        playNote("E2", 238);
-        playChord2("B2", "E3", 238);
-        playNote("E2", 238);
-        playChord2("B2", "E3", 238);
-        // bar 20
-        playNote("B2", 238);
-        playChord2("F#3", "B3", 238);
-        playNote("B2", 238);
-        playChord2("F#3", "B3", 238);
-        playNote("A2", 238);
-        playChord2("E3", "A3", 238);
-        playNote("A2", 238);
-        playChord2("E3", "A3", 238);
-        // bar 21
-        playChord2("C#2", "C#3", 952);
-        playChord2("E2", "E3", 952);
-        // bar 22
-        playChord2("B1", "B2", 952);
-        playChord2("A1", "A2", 952);
-        // bar 23
-        playChord2("C#2", "C#3", 952);
-        playChord2("E2", "E3", 952);
-        // bar 24
-        playChord2("B1", "B2", 952);
-        playChord2("A1", "A2", 952);
-        // bar 25
-        playNote("C#2", 238);
-        playNote("G#2", 238);
-        playNote("C#3", 238);
-        playNote("G#2", 238);
-        playNote("E2", 238);
-        playNote("B2", 238);
-        playNote("E3", 238);
-        playNote("B2", 238);
-        // bar 26
-        playNote("B1", 238);
-        playNote("F#2", 238);
-        playNote("B2", 238);
-        playNote("F#2", 238);
-        playNote("A1", 238);
-        playNote("E2", 238);
-        playNote("A2", 238);
-        playNote("E2", 238);
-        // bar 27
-        playNote("C#2", 238);
-        playNote("G#2", 238);
-        playNote("C#3", 238);
-        playNote("G#2", 238);
-        playNote("E2", 238);
-        playNote("B2", 238);
-        playNote("E3", 238);
-        playNote("B2", 238);
-        // bar 28
-        playChord2("B1", "B2", 238);
-        playChord2("B1", "B2", 238);
-        playChord2("B1", "B2", 238);
-        playChord2("B1", "B2", 238);
-        playChord2("A1", "A2", 238);
-        playChord2("A1", "A2", 238);
-        playChord2("A1", "A2", 238);
-        playChord2("A1", "A2", 238);
-        // bar 29
-        playChord2("C#2", "C#3", 238);
-        playNote("C#3", 238);
-        playChord2("C#2", "C#3", 238);
-        playNote("C#3", 238);
-        playChord2("E2", "E3", 238);
-        playNote("E3", 238);
-        playChord2("E2", "E3", 238);
-        playNote("E3", 238);
-        // bar 30
-        playChord2("B1", "B2", 238);
-        playNote("B2", 238);
-        playChord2("B1", "B2", 238);
-        playNote("B2", 238);
-        playChord2("A1", "A2", 238);
-        playNote("A2", 238);
-        playChord2("A1", "A2", 238);
-        playNote("A2", 238);
-        // bar 31
-        playChord2("C#2", "C#3", 238);
-        playNote("C#3", 238);
-        playChord2("C#2", "C#3", 238);
-        playNote("C#3", 238);
-        playChord2("E2", "E3", 238);
-        playNote("E3", 238);
-        playChord2("E2", "E3", 238);
-        playNote("E3", 238);
-        // bar 32
-        playChord2("B1", "B2", 238);
-        playNote("B2", 238);
-        playChord2("B1", "B2", 238);
-        playNote("B2", 238);
-        playChord2("A1", "A2", 238);
-        playNote("A2", 238);
-        playChord2("A1", "A2", 238);
-        playNote("A2", 238);
-        // bar 33
-        playChord2("C#2", "C#3", 238);
-        playNote("C#3", 238);
-        playChord2("C#2", "C#3", 238);
-        playNote("C#3", 238);
-        playChord2("E2", "E3", 238);
-        playNote("E3", 238);
-        playChord2("E2", "E3", 238);
-        playNote("E3", 238);
-        // bar 34
-        playChord2("B1", "B2", 238);
-        playNote("B2", 238);
-        playChord2("B1", "B2", 238);
-        playNote("B2", 238);
-        playChord2("A1", "A2", 238);
-        playNote("A2", 238);
-        playChord2("A1", "A2", 238);
-        playNote("A2", 238);
-        // bar 35
-        playChord2("C#2", "C#3", 238);
-        playNote("C#3", 238);
-        playChord2("C#2", "C#3", 238);
-        playNote("C#3", 238);
-        playChord2("E2", "E3", 238);
-        playNote("E3", 238);
-        playChord2("E2", "E3", 238);
-        playNote("E3", 238);
-        // bar 36
-        playChord2("B1", "B2", 238);
-        playNote("B2", 238);
-        playChord2("B1", "B2", 238);
-        playNote("B2", 238);
-        playChord2("A1", "A2", 238);
-        playNote("A2", 238);
-        playChord2("A1", "A2", 238);
-        playNote("A2", 238);
-        // bar 37
-        playChord2("C#2", "C#3", 476);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord2("E2", "E3", 476);
-        playChord3("G#3", "B3", "E4", 476);
-        // bar 38
-        playChord2("B1", "B2", 476);
-        playChord3("F#3", "B3", "D#4", 476);
-        playChord2("A1", "A2", 476);
-        playChord3("A3", "C#4", "E4", 476);
-        // bar 39
-        playChord2("C#2", "C#3", 476);
-        playChord3("G#3", "C#4", "E4", 476);
-        playChord2("E2", "E3", 476);
-        playChord3("G#3", "B3", "E4", 476);
-        // bar 40
-        playChord2("B1", "B2", 476);
-        playChord3("F#3", "B3", "D#4", 476);
-        playChord2("A1", "A2", 476);
-        playChord3("A3", "C#4", "E4", 476);
     }
 
 
     public void combineLeftHandRightHand() throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                rightHand();
+                //rightHand();
+                rightHandTxt();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -726,7 +158,8 @@ public class Avicii2ElectricBoogaloo {
 
         Thread thread2 = new Thread(() -> {
             try {
-                leftHand();
+                //leftHand();
+                leftHandTxt();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -906,4 +339,3 @@ public class Avicii2ElectricBoogaloo {
         }
     }
 }
-
