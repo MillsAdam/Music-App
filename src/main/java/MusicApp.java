@@ -23,9 +23,15 @@ public class MusicApp {
 //        player.run();
 
 
+
         int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
         Avicii2ElectricBoogaloo player = new Avicii2ElectricBoogaloo(INSTRUMENT_PIANO, volume);
         player.run();
+
+
+//        int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
+//        WaitingForLove player = new WaitingForLove(INSTRUMENT_PIANO, volume);
+//        player.run();
 
     }
 }
