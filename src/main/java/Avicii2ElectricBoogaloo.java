@@ -83,7 +83,7 @@ public class Avicii2ElectricBoogaloo {
                     {
                         playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
                     }
-                    else
+                    else if (txt.length == 5)
                     {
                         playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
                     }
@@ -152,6 +152,7 @@ public class Avicii2ElectricBoogaloo {
     public void levels() throws InterruptedException
     {
         combineLeftHandRightHand();
+        rest(476);
     }
 
 

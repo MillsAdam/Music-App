@@ -2,16 +2,11 @@ import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /*
  * https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiChannel.html
  */
-public class Avicii {
+public class LevelsHardCode {
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
@@ -20,7 +15,7 @@ public class Avicii {
     int instrument;
     int volume;
 
-    public Avicii(int instrument, int volume) {
+    public LevelsHardCode(int instrument, int volume) {
 
         this.instrument = instrument;
         this.volume = volume;
