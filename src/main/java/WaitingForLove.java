@@ -159,7 +159,6 @@ public class WaitingForLove {
     public void combineLeftHandRightHand() throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                //rightHand();
                 rightHandTxt();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -168,7 +167,6 @@ public class WaitingForLove {
 
         Thread thread2 = new Thread(() -> {
             try {
-                //leftHand();
                 leftHandTxt();
             } catch (InterruptedException e) {
                 e.printStackTrace();
