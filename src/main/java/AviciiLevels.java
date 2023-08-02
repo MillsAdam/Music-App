@@ -11,7 +11,7 @@ import java.util.Scanner;
 /*
  * https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiChannel.html
  */
-public class Avicii2ElectricBoogaloo {
+public class AviciiLevels {
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
@@ -20,7 +20,7 @@ public class Avicii2ElectricBoogaloo {
     int instrument;
     int volume;
 
-    public Avicii2ElectricBoogaloo(int instrument, int volume) {
+    public AviciiLevels(int instrument, int volume) {
 
         this.instrument = instrument;
         this.volume = volume;
@@ -30,7 +30,8 @@ public class Avicii2ElectricBoogaloo {
     public void run(){
 
         try {
-
+            System.out.println("********** AVICII - LEVELS **********");
+            System.out.println();
             levels();
         } catch(InterruptedException e) {
             e.printStackTrace();

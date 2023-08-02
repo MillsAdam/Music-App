@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MusicApp {
 
     public static int INSTRUMENT_PIANO = 0;
@@ -22,16 +24,29 @@ public class MusicApp {
 //        player = new MusicPlayer(INSTRUMENT_DRUM, volume);
 //        player.run();
 
+        System.out.println("Please pick a song:");
+        System.out.println("(1) Avicii - Levels");
+        System.out.println("(2) Avicii - Waiting For Love");
+        System.out.print(">>> ");
+        Scanner userInput = new Scanner(System.in);
+        String input = userInput.nextLine();
+        if (input.equals("1"))
+        {
+            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
+            AviciiLevels player = new AviciiLevels(INSTRUMENT_PIANO, volume);
+            player.run();
+        }
+        else if (input.equals("2"))
+        {
+            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
+            AviciiWaitingForLove player = new AviciiWaitingForLove(INSTRUMENT_PIANO, volume);
+            player.run();
+        }
 
 
-//        int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-//        Avicii2ElectricBoogaloo player = new Avicii2ElectricBoogaloo(INSTRUMENT_PIANO, volume);
-//        player.run();
 
 
-        int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-        WaitingForLove player = new WaitingForLove(INSTRUMENT_PIANO, volume);
-        player.run();
+
 
     }
 }
