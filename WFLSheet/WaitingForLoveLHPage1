@@ -5,28 +5,16 @@ Page1
 234 play C#2 C#3
 468 rest
 234 play C#2 C#3
-
-
 Bar
 234 play D2 D3
 1404 rest
 234 rest
-
-
-
-
-
 Bar
 936 play D2 D3
 936 play E2 E3
-
-
 Bar
 936 play F#2 F#3
 936 rest
-
-
-
 Bar
 468 play F#3 A3 C#4
 234 play A3 C#4
@@ -40,7 +28,6 @@ Bar
 468 play F#3 A3
 234 play F#3 A3
 234 play A2
-
 Bar
 468 play D3 F#3 A3
 234 play F#3 A3
@@ -54,7 +41,6 @@ Bar
 468 play A3 C#4
 234 play A3 C#4
 234 play C#3
-
 Bar
 468 play F#3 A3 C#4
 234 play A3 C#4
@@ -71,15 +57,8 @@ Bar
 Bar
 936 play D3 F#3 A3
 936 play E3 G#3 B3
-
-
-
 Bar
 1872 play F#3 A3 C#4
-
-
-
-
 Bar
 468 play F#2 C#3 F#3
 234 play C#3 F#3
@@ -93,7 +72,6 @@ Bar
 468 play D3
 234 play D3
 234 play A2
-
 Bar
 468 play D2 D3
 234 play D3
@@ -107,7 +85,6 @@ Bar
 468 play F#3
 234 play F#3
 234 play C#2
-
 Bar
 468 play F#2 C#3 F#3
 234 play C#3 F#3
@@ -124,12 +101,8 @@ Bar
 Bar
 936 play D2 D3
 936 play E2 E3
-
-
-
 Bar
 1872 play F#2 F#3
-
 Bar
 234 play D3
 234 play A3
