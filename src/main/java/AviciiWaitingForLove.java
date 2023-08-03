@@ -50,8 +50,10 @@ public class AviciiWaitingForLove {
         // Page 3 = Bars 51 - 75
         // Page 4 = Bars 76 - 101
         // Page 5 = Bars 102 - 121
-        String[] files = {"WFLSheet/WaitingForLoveRHPage1", "WFLSheet/WaitingForLoveRHPage2",
-                "WFLSheet/WaitingForLoveRHPage3", "WFLSheet/WaitingForLoveRHPage4", "WFLSheet/WaitingForLoveRHPage5"};
+        // String[] files = {"WFLSheet/WaitingForLoveRHPage1", "WFLSheet/WaitingForLoveRHPage2",
+                // "WFLSheet/WaitingForLoveRHPage3", "WFLSheet/WaitingForLoveRHPage4", "WFLSheet/WaitingForLoveRHPage5"};
+
+        String[] files = {"WFLSheet/WaitingForLoveRHFull"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -106,8 +108,10 @@ public class AviciiWaitingForLove {
         // Page 3 = Bars 51 - 75
         // Page 4 = Bars 76 - 101
         // Page 5 = Bars 102 - 121
-        String[] files = {"WFLSheet/WaitingForLoveLHPage1", "WFLSheet/WaitingForLoveLHPage2",
-                "WFLSheet/WaitingForLoveLHPage3", "WFLSheet/WaitingForLoveLHPage4", "WFLSheet/WaitingForLoveLHPage5"};
+        // String[] files = {"WFLSheet/WaitingForLoveLHPage1", "WFLSheet/WaitingForLoveLHPage2",
+                // "WFLSheet/WaitingForLoveLHPage3", "WFLSheet/WaitingForLoveLHPage4", "WFLSheet/WaitingForLoveLHPage5"};
+
+        String[] files = {"WFLSheet/WaitingForLoveLHFull"};
 
         for (int i = 0; i < files.length; i++)
         {
