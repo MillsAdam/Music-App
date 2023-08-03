@@ -30,6 +30,7 @@ public class AviciiWaitingForLove {
     public void run(){
 
         try {
+            System.out.println();
             System.out.println("********** AVICII - WAITING FOR LOVE **********");
             System.out.println();
             levels();
