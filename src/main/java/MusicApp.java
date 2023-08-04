@@ -24,6 +24,8 @@ public class MusicApp {
 //        player = new MusicPlayer(INSTRUMENT_DRUM, volume);
 //        player.run();
 
+        PianoKeyboard pianoKeyboard = new PianoKeyboard();
+
         System.out.println("Please pick a song:");
         System.out.println("(1) Avicii - Levels");
         System.out.println("(2) Avicii - Waiting For Love");
@@ -42,7 +44,12 @@ public class MusicApp {
             AviciiWaitingForLove player = new AviciiWaitingForLove(INSTRUMENT_PIANO, volume);
             player.run();
         }
-
+        else if (input.equals("3"))
+        {
+            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
+            TestMusic player = new TestMusic(INSTRUMENT_PIANO, volume, pianoKeyboard);
+            player.run();
+        }
 
 
 

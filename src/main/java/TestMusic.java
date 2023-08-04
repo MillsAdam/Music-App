@@ -11,7 +11,7 @@ import java.util.Scanner;
 /*
  * https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiChannel.html
  */
-public class AviciiWaitingForLove {
+public class TestMusic {
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
@@ -20,10 +20,13 @@ public class AviciiWaitingForLove {
     int instrument;
     int volume;
 
-    public AviciiWaitingForLove(int instrument, int volume) {
+    private PianoKeyboard pianoKeyboard;
+
+    public TestMusic(int instrument, int volume, PianoKeyboard pianoKeyboard) {
 
         this.instrument = instrument;
         this.volume = volume;
+        this.pianoKeyboard = pianoKeyboard;
         openSynth();
     }
 
@@ -31,9 +34,9 @@ public class AviciiWaitingForLove {
 
         try {
             System.out.println();
-            System.out.println("********** AVICII - WAITING FOR LOVE **********");
+            System.out.println("********** Test Music **********");
             System.out.println();
-            waitingForLove();
+            playTest();
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
@@ -41,162 +44,41 @@ public class AviciiWaitingForLove {
         closeSynth();
     }
 
-    public void rightHandTxt() throws InterruptedException
+
+
+    public void playTest() throws InterruptedException
     {
-        int rightBarCounter = 0;
-
-        // Page 1 = Bars 1- 24
-        // Page 2 = Bars 25 - 50
-        // Page 3 = Bars 51 - 75
-        // Page 4 = Bars 76 - 101
-        // Page 5 = Bars 102 - 121
-        // String[] files = {"WFLSheet/WaitingForLoveRHPage1", "WFLSheet/WaitingForLoveRHPage2",
-        // "WFLSheet/WaitingForLoveRHPage3", "WFLSheet/WaitingForLoveRHPage4", "WFLSheet/WaitingForLoveRHPage5"};
-
-        String[] files = {"WFLSheet/WaitingForLoveRHFull"};
-
-        for (int i = 0; i < files.length; i++)
-        {
-            File filePath = new File (files[i]);
-            List<String[]> listOfRightHandArray = new ArrayList<>();
-
-            try (Scanner fileScanner = new Scanner (filePath))
-            {
-                while (fileScanner.hasNextLine())
-                {
-                    String lineText = fileScanner.nextLine();
-                    String[] splitLineText = lineText.split(" ");
-                    listOfRightHandArray.add(splitLineText);
-                }
-                for (String[] txt : listOfRightHandArray)
-                {
-                    if (txt.length == 1)
-                    {
-                        rightBarCounter++;
-                        System.out.print("\nBar " + rightBarCounter + ": ");
-                    }
-                    else if (txt.length == 2)
-                    {
-                        rest(Integer.parseInt(txt[0]));
-                    }
-                    else if (txt.length == 3)
-                    {
-                        playNote(txt[2], Integer.parseInt(txt[0]));
-                    }
-                    else if (txt.length == 4)
-                    {
-                        playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
-                    }
-                    else if (txt.length == 5)
-                    {
-                        playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
-                    }
-                }
-            }
-            catch (FileNotFoundException e)
-            {
+        new Thread(() -> {
+            try {
+                playNote("D3", 476);
+                playNote("D4", 476);
+                playNote("D5", 476);
+                rest(476);
+            } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }).start();
     }
 
-    public void leftHandTxt() throws InterruptedException
-    {
-
-        // Page 1 = Bars 1- 24
-        // Page 2 = Bars 25 - 50
-        // Page 3 = Bars 51 - 75
-        // Page 4 = Bars 76 - 101
-        // Page 5 = Bars 102 - 121
-        // String[] files = {"WFLSheet/WaitingForLoveLHPage1", "WFLSheet/WaitingForLoveLHPage2",
-        // "WFLSheet/WaitingForLoveLHPage3", "WFLSheet/WaitingForLoveLHPage4", "WFLSheet/WaitingForLoveLHPage5"};
-
-        String[] files = {"WFLSheet/WaitingForLoveLHFull"};
-
-        for (int i = 0; i < files.length; i++)
-        {
-            File filePath = new File (files[i]);
-            List<String[]> listOfLeftHandArray = new ArrayList<>();
-
-            try (Scanner fileScanner = new Scanner (filePath))
-            {
-                while (fileScanner.hasNextLine())
-                {
-                    String lineText = fileScanner.nextLine();
-                    String[] splitLineText = lineText.split(" ");
-                    listOfLeftHandArray.add(splitLineText);
-                }
-                for (String[] txt : listOfLeftHandArray)
-                {
-                    if (txt.length == 2)
-                    {
-                        rest(Integer.parseInt(txt[0]));
-                    }
-                    else if (txt.length == 3)
-                    {
-                        playNote(txt[2], Integer.parseInt(txt[0]));
-                    }
-                    else if (txt.length == 4)
-                    {
-                        playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
-                    }
-                    else if (txt.length == 5)
-                    {
-                        playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
-                    }
-                }
-            }
-            catch (FileNotFoundException e)
-            {
-                throw new RuntimeException(e);
-            }
-        }
-    }
+//    public void playTest() throws InterruptedException
+//    {
+//        playNote("D3", 476);
+//        playNote("D4", 476);
+//        playNote("D5", 476);
+//        rest(476);
+//    }
 
 
-
-    public void waitingForLove() throws InterruptedException
-    {
-        combineLeftHandRightHand();
-        rest(476);
-    }
-
-
-    public void combineLeftHandRightHand() throws InterruptedException {
-        Thread thread1 = new Thread(() -> {
-            try {
-                rightHandTxt();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-
-        Thread thread2 = new Thread(() -> {
-            try {
-                leftHandTxt();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-
-        // Start the threads to play simultaneously
-        thread1.start();
-        thread2.start();
-
-        // Wait for both threads to finish
-        thread1.join();
-        thread2.join();
-    }
 
 
 
 
 
     // ********** rest METHOD **********
-    public static void rest(int duration) throws InterruptedException
+    public static void rest(int durationMs) throws InterruptedException
     {
         System.out.print("rest " );
-        Thread.sleep(duration);
+        Thread.sleep(durationMs);
     }
 
 
@@ -214,6 +96,9 @@ public class AviciiWaitingForLove {
         channels[this.instrument].noteOn(midiNote, volume );
         Thread.sleep( durationMs );
         channels[this.instrument].noteOff(midiNote);
+
+        // set the currently played note in the PianoKeyboard
+        pianoKeyboard.setCurrentNote(midiNote);
     }
 
 
