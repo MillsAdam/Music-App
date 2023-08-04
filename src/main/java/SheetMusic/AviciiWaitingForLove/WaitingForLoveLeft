@@ -1,94 +1,116 @@
+Page1
 234 play F#2 F#3
 468 rest
 234 play F#2 F#3
 234 play C#2 C#3
 468 rest
 234 play C#2 C#3
+Bar
 234 play D2 D3
 1404 rest
 234 play A2
+Bar
 936 play D2 D3
 936 play E2 E3
+Bar
 936 play F#2 F#3
 936 rest
+Bar
 468 play F#3 A3 C#4
 234 play A3 C#4
 234 play F#3
 468 play C#3 F#3 G#3
 234 play F#3 G#3
 234 play C#3
+Bar
 468 play D3 F#3 A3
 468 play F#3 A3
 468 play F#3 A3
 234 play F#3 A3
 234 play A2
+Bar
 468 play D3 F#3 A3
 234 play F#3 A3
 234 play D3
 468 play E3 G#3 B3
 234 play G#3 B3
 234 play E3
+Bar
 468 play F#3 A3 C#4
 468 play A3 C#4
 468 play A3 C#4
 234 play A3 C#4
 234 play C#3
+Bar
 468 play F#3 A3 C#4
 234 play A3 C#4
 234 play F#3
 468 play C#3 F#3 G#3
 234 play F#3 G#3
 234 play C#3
+Bar
 468 play D3 F#3 A3
 468 play F#3 A3
 468 play F#3 A3
 234 play F#3 A3
 234 play A2
+Bar
 936 play D3 F#3 A3
 936 play E3 G#3 B3
+Bar
 1872 play F#3 A3 C#4
+Bar
 468 play F#2 C#3 F#3
 234 play C#3 F#3
 234 play F#2
 468 play C#2 C#3
 234 play C#3
 234 play C#2
+Bar
 468 play D2 D3
 468 play D3
 468 play D3
 234 play D3
 234 play A2
+Bar
 468 play D2 D3
 234 play D3
 234 play D2
 468 play E2 E3
 234 play E3
 234 play E2
+Bar
 468 play F#2 F#3
 468 play F#3
 468 play F#3
 234 play F#3
 234 play C#2
+Bar
 468 play F#2 C#3 F#3
 234 play C#3 F#3
 234 play F#2
 468 play C#2 C#3
 234 play C#3
 234 play C#2
+Bar
 468 play D2 D3
 468 play D3
 468 play D3
 234 play D3
 234 play A2
+Bar
 936 play D2 D3
 936 play E2 E3
+Bar
 1872 play F#2 F#3
+Bar
 234 play D3
 234 play A3
 468 play D4
 234 play C#3
 234 play E3
 468 play A3
+Bar
 234 play F#2
 234 play C#3
 468 play F#3
@@ -96,12 +118,14 @@
 234 play F#2
 234 play C#3 F#3
 234 play F#2
+Bar
 234 play D3
 234 play A3
 468 play D4
 234 play C#3
 234 play E3
 468 play A3
+Bar
 234 play F#2
 234 play C#3
 468 play F#3
@@ -109,12 +133,14 @@
 234 play F#2
 234 play C#3 F#3
 234 play F#2
+Page2
 234 play D3
 234 play A3
 468 play D4
 234 play C#3
 234 play G#3
 468 play C#4
+Bar
 234 play E2
 234 play B2
 468 play E3
@@ -122,15 +148,18 @@
 234 play E2
 234 play B2 E3
 234 play E2
+Bar
 351 play D2 D3
 351 play C#2 C#3
 234 play B1 B2
 936 play F#1 F#2
+Bar
 351 play D2 D3
 351 play C#2 C#3
 234 play B1 B2
 468 play G#1 G#2
 468 play E1 E2
+Bar
 234 play D2 D3
 234 play D3
 234 play F#3 A3
@@ -139,6 +168,7 @@
 234 play C#3
 234 play E3 A3
 234 play C#3
+Bar
 234 play F#1 F#2
 234 play C#3
 234 play F#3 A3
@@ -147,6 +177,7 @@
 234 play C#3
 234 play F#3 A3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play F#3 A3
@@ -155,6 +186,7 @@
 234 play C#3
 234 play E3 A3
 234 play C#3
+Bar
 234 play F#1 F#2
 234 play C#3
 234 play F#3 A3
@@ -163,6 +195,7 @@
 234 play C#3
 234 play F#3 A3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play F#3 A3
@@ -171,6 +204,7 @@
 234 play C#3
 234 play E3 G#3
 234 play C#3
+Bar
 234 play E2 E3
 234 play E3
 234 play F#3 A3
@@ -179,15 +213,18 @@
 234 play E3
 234 play F#3 A3
 234 play E3
+Bar
 351 play D2 D3
 351 play C#2 C#3
 234 play B1 B2
 936 play F#1 F#2
+Bar
 351 play D2 D3
 351 play C#2 C#3
 234 play B1 B2
 468 play G#1 G#2
 468 play E1 E3
+Bar
 234 play D2
 234 play A2
 234 play D3
@@ -196,6 +233,7 @@
 234 play A2
 234 play D3
 234 play A2
+Bar
 234 play D3
 234 play A2
 234 play D3
@@ -204,6 +242,7 @@
 234 play A2
 234 play D3
 234 play A2
+Bar
 234 play D2
 234 play A2
 234 play D3
@@ -212,6 +251,7 @@
 234 play A2
 234 play D3
 234 play A2
+Bar
 234 play D3
 234 play A2
 234 play D3
@@ -220,70 +260,84 @@
 234 play A2
 234 play D3
 234 play A2
+Bar
 468 play F#3 A3 C#4
 234 play A3 C#4
 234 play F#3
 468 play C#3 G#3 B3
 234 play G#3 B3
 234 play C#3
+Bar
 468 play D3 F#3 A3
 468 play F#3 A3
 468 play F#3 A3
 234 play F#3 A3
 234 play A2
+Bar
 468 play D3 F#3 A3
 234 play F#3 A3
 234 play D3
 468 play E3 G#3 B3
 234 play G#3 B3
 234 play E3
+Bar
 468 play F#3 A3 C#4
 468 play A3 C#4
 468 play A3 C#4
 234 play A3 C#4
 234 play C#3
+Bar
 468 play F#3 A3 C#4
 234 play A3 C#4
 234 play F#3
 468 play C#3 G#3 B3
 234 play G#3 B3
 234 play C#3
+Bar
 468 play D3 F#3 A3
 468 play F#3 A3
 468 play F#3 A3
 234 play F#3 A3
 234 play A2
+Bar
 936 play D3 F#3 A3
 936 play E3 G#3 B3
+Bar
 1404 play F#3 A3 C#4
 468 play C#4
+Bar
 468 play F#2 F#3
 234 play F#3
 234 play F#2
 468 play C#2 C#3
 234 play C#3
 234 play C#2
+Bar
 468 play D2 D3
 468 play D3
 468 play D3
 468 play D3
+Page3
 468 play D2 D3
 234 play D3
 234 play D2
 468 play E2 E3
 234 play E3
 234 play E2
+Bar
 468 play F#2 F#3
 468 play F#3
 468 play F#3
 234 play F#3
 234 play F#2
+Bar
 468 play F#2 F#3
 234 play F#3
 234 play F#2
 468 play C#2 C#3
 234 play C#3
 234 play C#2
+Bar
 468 play D2 D3
 234 play D2 D3
 234 play D2 D3
@@ -291,6 +345,7 @@
 234 play D2 D3
 234 play D2 D3
 234 play D2 D3
+Bar
 234 play D2 D3
 234 play D2 D3
 234 play D2 D3
@@ -299,12 +354,14 @@
 234 play E2 E3
 234 play E2 E3
 234 play E2 E3
+Bar
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#1 F#2
 702 rest
+Bar
 234 play F#1 F#2
 234 play F#2
 234 play F#1 F#2
@@ -313,6 +370,7 @@
 234 play C#3
 234 play C#2 C#3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -321,6 +379,7 @@
 234 play D3
 234 play D2 D3
 234 play D3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -329,6 +388,7 @@
 234 play E3
 234 play E2 E3
 234 play E3
+Bar
 234 play F#2 F#3
 234 play F#3
 234 play F#2 F#3
@@ -337,6 +397,7 @@
 234 play F#3
 234 play F#2 F#3
 234 play F#3
+Bar
 234 play F#2 F#3
 234 play F#3
 234 play F#2 F#3
@@ -345,6 +406,7 @@
 234 play C#3
 234 play C#2 C#3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -353,6 +415,7 @@
 234 play D3
 234 play D2 D3
 234 play D3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -361,12 +424,14 @@
 234 play E3
 234 play E2 E3
 234 play E3
+Bar
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#1 F#2
 702 rest
+Bar
 234 play F#2
 234 play C#3
 234 play F#3
@@ -375,6 +440,7 @@
 234 play G#2
 234 play C#3
 234 play C#2
+Bar
 234 play D2
 234 play A2
 234 play D3
@@ -383,6 +449,7 @@
 234 play A2
 234 play D3
 234 play A2
+Bar
 234 play D2
 234 play A2
 234 play D3
@@ -391,6 +458,7 @@
 234 play B2
 234 play E3
 234 play E2
+Bar
 234 play F#2
 234 play C#3
 234 play F#3
@@ -399,6 +467,7 @@
 234 play C#3
 234 play F#3
 234 play C#3
+Bar
 234 play F#2
 234 play C#3
 234 play F#3
@@ -407,6 +476,7 @@
 234 play G#2
 234 play C#3
 234 play C#2
+Bar
 234 play D2
 234 play A2
 234 play D3
@@ -415,15 +485,19 @@
 234 play A2
 234 play D3
 234 play A2
+Bar
 936 play D2 D3
 936 play E2 E3
+Bar
 1872 play F#2 C#3 F#3
+Bar
 234 play D3
 234 play A3
 468 play D4
 234 play C#3
 234 play E3
 468 play A3
+Bar
 234 play F#2
 234 play C#3
 468 play F#3
@@ -431,12 +505,14 @@
 234 play F#2
 234 play C#3 F#3
 234 play F#2
+Bar
 234 play D3
 234 play A3
 468 play D4
 234 play C#3
 234 play E3
 468 play A3
+Page4
 234 play F#2
 234 play C#3
 468 play F#3
@@ -444,12 +520,14 @@
 234 play F#2
 234 play C#3 F#3
 234 play F#2
+Bar
 234 play D3
 234 play A3
 468 play D4
 234 play C#3
 234 play G#3
 468 play C#4
+Bar
 234 play E2
 234 play B2
 468 play E3
@@ -457,15 +535,18 @@
 234 play E2
 234 play B2 E3
 234 play E2
+Bar
 351 play D2 D3
 351 play C#2 C#3
 234 play B1 B2
 936 play F#1 F#2
+Bar
 351 play D2 D3
 351 play C#2 C#3
 234 play B1 B2
 468 play G#1 G#2
 468 play E1 E2
+Bar
 234 play D2 D3
 234 play D3
 234 play F#3 A3
@@ -474,6 +555,7 @@
 234 play C#3
 234 play E3 A3
 234 play C#3
+Bar
 234 play F#1 F#2
 234 play C#3
 234 play F#3 A3
@@ -482,6 +564,7 @@
 234 play C#3
 234 play F#3 A3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play F#3 A3
@@ -490,6 +573,7 @@
 234 play C#3
 234 play E3 A3
 234 play C#3
+Bar
 234 play F#1 F#2
 234 play C#3
 234 play F#3 A3
@@ -498,6 +582,7 @@
 234 play C#3
 234 play F#3 A3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play F#3 A3
@@ -506,6 +591,7 @@
 234 play C#3
 234 play E3 G#3
 234 play C#3
+Bar
 234 play E2 E3
 234 play E3
 234 play F#3 A3
@@ -514,79 +600,95 @@
 234 play E3
 234 play F#3 A3
 234 play E3
+Bar
 351 play D2 D3
 351 play C#2 C#3
 234 play B1 B2
 936 play F#1 F#2
+Bar
 351 play D2 D3
 351 play C#2 C#3
 234 play B1 B2
 468 play G#1 G#2
 468 play E1 E2
+Bar
 468 play F#2 C#3 F#3
 234 play C#3 F#3
 234 play F#2
 468 play C#2 C#3
 234 play C#3
 234 play C#2
+Bar
 468 play D2 D3
 468 play D3
 468 play D3
 234 play D3
 234 play D2
+Bar
 468 play D2 D3
 234 play D3
 234 play D2
 468 play E2 E3
 234 play E3
 234 play E2
+Bar
 468 play F#2 F#3
 468 play F#3
 468 play F#3
 234 play F#3
 234 play F#2
+Bar
 468 play F#2 C#3 F#3
 234 play C#3 F#3
 234 play F#2
 468 play C#2 C#3
 234 play C#3
 234 play C#2
+Bar
 468 play D2 D3
 468 play D3
 468 play D3
 234 play D3
 234 play D2
+Bar
 936 play D2 D3
 936 play E2 E3
+Bar
 1872 play F#2 F#3
+Bar
 468 play F#2 F#3
 234 play F#3
 234 play F#2
 468 play C#2 C#3
 234 play C#3
 234 play C#2
+Bar
 468 play D2 D3
 468 play D3
 468 play D3
 234 play D3
 234 play D2
+Bar
 468 play D2 D3
 234 play D3
 234 play D2
 468 play E2 E3
 234 play E3
 234 play E2
+Bar
 468 play F#2 F#3
 468 play F#3
 468 play F#3
 234 play F#3
 234 play F#2
+Bar
 468 play F#2 F#3
 234 play F#3
 234 play F#2
 468 play C#2 C#3
 234 play C#3
 234 play C#2
+Page5
 468 play D2 D3
 234 play D2 D3
 234 play D2 D3
@@ -594,6 +696,7 @@
 234 play D2 D3
 234 play D2 D3
 234 play D2 D3
+Bar
 234 play D2 D3
 234 play D2 D3
 234 play D2 D3
@@ -602,12 +705,14 @@
 234 play E2 E3
 234 play E2 E3
 234 play E2 E3
+Bar
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#1 F#2
 702 rest
+Bar
 234 play F#1 F#2
 234 play F#2
 234 play F#1 F#2
@@ -616,6 +721,7 @@
 234 play C#3
 234 play C#2 C#3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -624,6 +730,7 @@
 234 play D3
 234 play D2 D3
 234 play D3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -632,6 +739,7 @@
 234 play E3
 234 play E2 E3
 234 play E3
+Bar
 234 play F#2 F#3
 234 play F#3
 234 play F#2 F#3
@@ -640,6 +748,7 @@
 234 play F#3
 234 play F#2 F#3
 234 play F#3
+Bar
 234 play F#2 F#3
 234 play F#3
 234 play F#2 F#3
@@ -648,6 +757,7 @@
 234 play C#3
 234 play C#2 C#3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -656,6 +766,7 @@
 234 play D3
 234 play D2 D3
 234 play D3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -664,6 +775,7 @@
 234 play E3
 234 play E2 E3
 234 play E3
+Bar
 234 play F#2 F#3
 234 play F#3
 234 play F#2 F#3
@@ -672,6 +784,7 @@
 234 play F#3
 234 play F#2 F#3
 234 play F#3
+Bar
 234 play F#2 F#3
 234 play F#3
 234 play F#2 F#3
@@ -680,6 +793,7 @@
 234 play C#3
 234 play C#2 C#3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -688,6 +802,7 @@
 234 play D3
 234 play D2 D3
 234 play D3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -696,6 +811,7 @@
 234 play E3
 234 play E2 E3
 234 play E3
+Bar
 234 play F#2 F#3
 234 play F#3
 234 play F#2 F#3
@@ -704,6 +820,7 @@
 234 play F#3
 234 play F#2 F#3
 234 play F#3
+Bar
 234 play F#2 F#3
 234 play F#3
 234 play F#2 F#3
@@ -712,6 +829,7 @@
 234 play C#3
 234 play C#2 C#3
 234 play C#3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -720,6 +838,7 @@
 234 play D3
 234 play D2 D3
 234 play D3
+Bar
 234 play D2 D3
 234 play D3
 234 play D2 D3
@@ -728,6 +847,7 @@
 234 play E3
 234 play E2 E3
 234 play E3
+Bar
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#2 F#3
@@ -736,5 +856,6 @@
 234 play F#2 F#3
 234 play F#2 F#3
 234 play F#2 F#3
+Bar
 468 play F#1 F#2
 1404 rest

@@ -49,8 +49,11 @@ public class AviciiLevels {
         // Page 3 = Bars 41 - 60
         // Page 4 = Bars 61 - 77
         // Page 5 = Bars 78 - 100
-        String[] files = {"LevelsSheet/LevelsRHPage1", "LevelsSheet/LevelsRHPage2", "LevelsSheet/LevelsRHPage3",
-                "LevelsSheet/LevelsRHPage4", "LevelsSheet/LevelsRHPage5"};
+        String[] files = {"src/main/java/SheetMusic/AviciiLevels/LevelsRHPage1",
+                "src/main/java/SheetMusic/AviciiLevels/LevelsRHPage2",
+                "src/main/java/SheetMusic/AviciiLevels/LevelsRHPage3",
+                "src/main/java/SheetMusic/AviciiLevels/LevelsRHPage4",
+                "src/main/java/SheetMusic/AviciiLevels/LevelsRHPage5"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -105,8 +108,11 @@ public class AviciiLevels {
         // Page 3 = Bars 41 - 60
         // Page 4 = Bars 61 - 77
         // Page 5 = Bars 78 - 100
-        String[] files = {"LevelsSheet/LevelsLHPage1", "LevelsSheet/LevelsLHPage2", "LevelsSheet/LevelsLHPage3",
-                "LevelsSheet/LevelsLHPage4", "LevelsSheet/LevelsLHPage5"};
+        String[] files = {"src/main/java/SheetMusic/AviciiLevels/LevelsLHPage1",
+                "src/main/java/SheetMusic/AviciiLevels/LevelsLHPage2",
+                "src/main/java/SheetMusic/AviciiLevels/LevelsLHPage3",
+                "src/main/java/SheetMusic/AviciiLevels/LevelsLHPage4",
+                "src/main/java/SheetMusic/AviciiLevels/LevelsLHPage5"};
 
         for (int i = 0; i < files.length; i++)
         {

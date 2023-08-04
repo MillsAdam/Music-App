@@ -45,15 +45,7 @@ public class AviciiWaitingForLove {
     {
         int rightBarCounter = 0;
 
-        // Page 1 = Bars 1- 24
-        // Page 2 = Bars 25 - 50
-        // Page 3 = Bars 51 - 75
-        // Page 4 = Bars 76 - 101
-        // Page 5 = Bars 102 - 121
-        // String[] files = {"WFLSheet/WaitingForLoveRHPage1", "WFLSheet/WaitingForLoveRHPage2",
-        // "WFLSheet/WaitingForLoveRHPage3", "WFLSheet/WaitingForLoveRHPage4", "WFLSheet/WaitingForLoveRHPage5"};
-
-        String[] files = {"WFLSheet/WaitingForLoveRHFull"};
+        String[] files = {"src/main/java/SheetMusic/AviciiWaitingForLove/WaitingForLoveRight"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -103,15 +95,7 @@ public class AviciiWaitingForLove {
     public void leftHandTxt() throws InterruptedException
     {
 
-        // Page 1 = Bars 1- 24
-        // Page 2 = Bars 25 - 50
-        // Page 3 = Bars 51 - 75
-        // Page 4 = Bars 76 - 101
-        // Page 5 = Bars 102 - 121
-        // String[] files = {"WFLSheet/WaitingForLoveLHPage1", "WFLSheet/WaitingForLoveLHPage2",
-        // "WFLSheet/WaitingForLoveLHPage3", "WFLSheet/WaitingForLoveLHPage4", "WFLSheet/WaitingForLoveLHPage5"};
-
-        String[] files = {"WFLSheet/WaitingForLoveLHFull"};
+        String[] files = {"src/main/java/SheetMusic/AviciiWaitingForLove/WaitingForLoveLeft"};
 
         for (int i = 0; i < files.length; i++)
         {

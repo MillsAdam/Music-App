@@ -10,25 +10,12 @@ public class MusicApp {
 
     public static void main(String[] args) {
 
-        /*
-         * Play piano tones
-         */
-//        int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-//        MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
-//        player.run();
-//
-//        /*
-//         * Play drum tones
-//         */
-//        volume = MAX_VOLUME;
-//        player = new MusicPlayer(INSTRUMENT_DRUM, volume);
-//        player.run();
-
         PianoKeyboard pianoKeyboard = new PianoKeyboard();
 
         System.out.println("Please pick a song:");
         System.out.println("(1) Avicii - Levels");
         System.out.println("(2) Avicii - Waiting For Love");
+        System.out.println("(3) Test Music");
         System.out.print(">>> ");
         Scanner userInput = new Scanner(System.in);
         String input = userInput.nextLine();
