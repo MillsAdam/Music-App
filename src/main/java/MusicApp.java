@@ -16,6 +16,7 @@ public class MusicApp {
         System.out.println("(1) Avicii - Levels");
         System.out.println("(2) Avicii - Waiting For Love");
         System.out.println("(3) Test Music");
+        System.out.println("(4) Music Player");
         System.out.print(">>> ");
         Scanner userInput = new Scanner(System.in);
         String input = userInput.nextLine();
@@ -35,6 +36,12 @@ public class MusicApp {
         {
             int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
             TestMusic player = new TestMusic(INSTRUMENT_PIANO, volume, pianoKeyboard);
+            player.run();
+        }
+        else if (input.equals("4"))
+        {
+            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
+            MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
             player.run();
         }
 

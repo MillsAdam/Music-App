@@ -286,17 +286,17 @@ public class AviciiWaitingForLove {
     {
         int octave = Integer.parseInt(noteWithOctave.substring(noteWithOctave.length() - 1));
         String noteName = noteWithOctave.substring(0, noteWithOctave.length() - 1).toUpperCase();
-        int noteIndex = -1;
+        int midiNumber = -1;
 
         for (int i = 0; i < notes.length; i++)
         {
             if (notes[i].equals(noteName))
             {
-                noteIndex = 12 + (12 * octave) + i;
+                midiNumber = 12 + (12 * octave) + i;
                 break;
             }
         }
-        return noteIndex;
+        return midiNumber;
     }
 
 
