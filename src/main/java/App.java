@@ -1,9 +1,11 @@
+import Piano.PianoKeyboard;
+import Piano.TestMusic;
 import Songs.AviciiLevels;
 import Songs.AviciiWaitingForLove;
 
 import java.util.Scanner;
 
-public class MusicApp {
+public class App {
 
     public static int INSTRUMENT_PIANO = 0;
     public static int INSTRUMENT_DRUM = 9;
@@ -44,7 +46,7 @@ public class MusicApp {
         else if (input.equals("4"))
         {
             int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-            MusicPlayer player = new MusicPlayer();
+            MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
             player.run();
         }
 

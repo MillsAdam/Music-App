@@ -2,14 +2,14 @@ public class MusicPlayer {
 
     private int instrument;
     private int volume;
-    private Synth synth = new Synth();
+    private SynthController synthController = new SynthController();
     private SheetMusicReader sheetMusicReader = new SheetMusicReader();
     private MidiController midiController = new MidiController();
 
-    public MusicPlayer() {
-        this.instrument = midiController.getInstrument();
-        this.volume = midiController.getVolume();
-        synth.openSynth();
+    public MusicPlayer(int instrument, int volume) {
+        this.instrument = instrument;
+        this.volume = volume;
+        synthController.openSynth();
     }
 
     public void run()
@@ -18,18 +18,29 @@ public class MusicPlayer {
             System.out.println();
             System.out.println("********** AVICII - WAITING FOR LOVE **********");
             System.out.println();
-            musicPlayer();
+            music();
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
 
-        synth.closeSynth();
+        synthController.closeSynth();
+    }
+
+    public int getInstrument() {
+        return instrument;
+    }
+
+    public int getVolume() {
+        return volume;
     }
 
 
-    public void musicPlayer() throws InterruptedException
+    public void music() throws InterruptedException
     {
+        midiController.rest(1000);
         combineLeftHandRightHand();
+        System.out.println();
+        midiController.rest(1000);
     }
 
 

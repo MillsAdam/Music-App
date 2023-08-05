@@ -1,3 +1,5 @@
+package Piano;
+
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
@@ -97,7 +99,7 @@ public class TestMusic {
         Thread.sleep( durationMs );
         channels[this.instrument].noteOff(midiNote);
 
-        // set the currently played note in the PianoKeyboard
+        // set the currently played note in the Piano.PianoKeyboard
         pianoKeyboard.setCurrentNote(midiNote);
     }
 

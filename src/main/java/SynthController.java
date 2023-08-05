@@ -3,7 +3,7 @@ import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 
-public class Synth {
+public class SynthController {
 
     private Synthesizer synth;
     private MidiChannel[] channels;

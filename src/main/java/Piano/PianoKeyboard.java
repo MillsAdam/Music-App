@@ -1,3 +1,5 @@
+package Piano;
+
 import javax.swing.*;
 import java.awt.*;
 

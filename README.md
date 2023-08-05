@@ -4,7 +4,7 @@ Play some music in Java 🎵🎵
 
 ## Getting Started
 
-Run the main() method from the MusicApp class.
+Run the main() method from the App class.
 You should hear 3 tones from a piano, then from a drum.
 
 The instrument playing the tones can be configured using the MusicPlayer constructor 
@@ -29,7 +29,7 @@ In the MusicPlayer class, the `run()` method will play the tones specific in ord
              */
             playNote("4C", 1000);
             rest(500);
-            playNote("4D", MusicApp.MAX_VOLUME, 1000);
+            playNote("4D", App.MAX_VOLUME, 1000);
             playNote("4D#", 500);
             rest(600);
 

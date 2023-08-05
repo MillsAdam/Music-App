@@ -143,8 +143,10 @@ public class AviciiWaitingForLove {
 
     public void waitingForLove() throws InterruptedException
     {
+        rest(1000);
         combineLeftHandRightHand();
-        rest(476);
+        System.out.println();
+        rest(1000);
     }
 
 
