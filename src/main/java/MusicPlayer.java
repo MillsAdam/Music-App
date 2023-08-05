@@ -2,16 +2,15 @@ public class MusicPlayer {
 
     private int instrument;
     private int volume;
-    private MidiController midiController = new MidiController();
+    private Synth synth = new Synth();
     private SheetMusicReader sheetMusicReader = new SheetMusicReader();
+    private MidiController midiController = new MidiController();
 
-    public MusicPlayer(int instrument, int volume) {
-        this.instrument = instrument;
-        this.volume = volume;
-        midiController.openSynth();
+    public MusicPlayer() {
+        this.instrument = midiController.getInstrument();
+        this.volume = midiController.getVolume();
+        synth.openSynth();
     }
-
-
 
     public void run()
     {
@@ -24,23 +23,13 @@ public class MusicPlayer {
             e.printStackTrace();
         }
 
-        midiController.closeSynth();
+        synth.closeSynth();
     }
 
-    public int getVolume()
-    {
-        return this.volume;
-    }
-
-    public int getInstrument()
-    {
-        return this.instrument;
-    }
 
     public void musicPlayer() throws InterruptedException
     {
         combineLeftHandRightHand();
-        midiController.rest(476);
     }
 
 

@@ -1,3 +1,6 @@
+import Songs.AviciiLevels;
+import Songs.AviciiWaitingForLove;
+
 import java.util.Scanner;
 
 public class MusicApp {
@@ -41,7 +44,7 @@ public class MusicApp {
         else if (input.equals("4"))
         {
             int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-            MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
+            MusicPlayer player = new MusicPlayer();
             player.run();
         }
 
