@@ -87,7 +87,7 @@ public class MidiController {
 
     public void playChord4(String note1, String note2, String note3, String note4, int durationMs) throws InterruptedException
     {
-        System.out.print("\t" + note1 + "\t\t" + note2 + "\t\t" + note3 + "\t\t" + note4 + "\t");
+        System.out.print(note1 + " " + note2 + " " + note3 + " " + note4 + " ");
         playChord4(note1, note2, note3, note4, musicPlayer.getVolume(), durationMs);;
     }
 

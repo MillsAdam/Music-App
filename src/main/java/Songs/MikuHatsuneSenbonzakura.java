@@ -13,7 +13,7 @@ import java.util.Scanner;
 /*
  * https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiChannel.html
  */
-public class AviciiLevels {
+public class MikuHatsuneSenbonzakura {
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
@@ -22,7 +22,7 @@ public class AviciiLevels {
     int instrument;
     int volume;
 
-    public AviciiLevels(int instrument, int volume) {
+    public MikuHatsuneSenbonzakura(int instrument, int volume) {
 
         this.instrument = instrument;
         this.volume = volume;
@@ -33,9 +33,9 @@ public class AviciiLevels {
 
         try {
             System.out.println();
-            System.out.println("********** AVICII - LEVELS **********");
+            System.out.println("********** MIKU HATSUNE - SENBONZAKURA **********");
             System.out.println();
-            levels();
+            senbonzakura();
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
@@ -43,16 +43,16 @@ public class AviciiLevels {
         closeSynth();
     }
 
-    public void rightHandTxt() throws InterruptedException
+    public void right() throws InterruptedException
     {
         int rightBarCounter = 0;
 
-        // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 40
-        // Page 3 = Bars 41 - 60
-        // Page 4 = Bars 61 - 77
-        // Page 5 = Bars 78 - 100
-        String[] files = {"src/main/java/SheetMusic/AviciiLevels/LevelsRight"};
+        // Page 1: 1 - 28
+        // Page 2: 29 - 60
+        // Page 3: 61 - 92
+        // Page 4: 93 - 120
+        // Page 5: 121 - 153
+        String[] files = {"src/main/java/SheetMusic/MikuHatsuneSenbonzakura/SenbonzakuraRPage1"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -90,6 +90,10 @@ public class AviciiLevels {
                     {
                         playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
                     }
+                    else if (txt.length == 6)
+                    {
+                        playChord4(txt[2], txt[3], txt[4], txt[5], Integer.parseInt(txt[0]));
+                    }
                 }
             }
             catch (FileNotFoundException e)
@@ -99,15 +103,14 @@ public class AviciiLevels {
         }
     }
 
-    public void leftHandTxt() throws InterruptedException
+    public void left() throws InterruptedException
     {
-
-        // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 40
-        // Page 3 = Bars 41 - 60
-        // Page 4 = Bars 61 - 77
-        // Page 5 = Bars 78 - 100
-        String[] files = {"src/main/java/SheetMusic/AviciiLevels/LevelsLeft"};
+        // Page 1: 1 - 28
+        // Page 2: 29 - 60
+        // Page 3: 61 - 92
+        // Page 4: 93 - 120
+        // Page 5: 121 - 153
+        String[] files = {"src/main/java/SheetMusic/MikuHatsuneSenbonzakura/SenbonzakuraLPage1"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -140,6 +143,63 @@ public class AviciiLevels {
                     {
                         playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
                     }
+                    else if (txt.length == 6)
+                    {
+                        playChord4(txt[2], txt[3], txt[4], txt[5], Integer.parseInt(txt[0]));
+                    }
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void middle() throws InterruptedException
+    {
+        // Page 1: 1 - 28
+        // Page 2: 29 - 60
+        // Page 3: 61 - 92
+        // Page 4: 93 - 120
+        // Page 5: 121 - 153
+        String[] files = {"src/main/java/SheetMusic/MikuHatsuneSenbonzakura/SenbonzakuraMPage1"};
+
+        for (int i = 0; i < files.length; i++)
+        {
+            File filePath = new File (files[i]);
+            List<String[]> listOfLeftHandArray = new ArrayList<>();
+
+            try (Scanner fileScanner = new Scanner (filePath))
+            {
+                while (fileScanner.hasNextLine())
+                {
+                    String lineText = fileScanner.nextLine();
+                    String[] splitLineText = lineText.split(" ");
+                    listOfLeftHandArray.add(splitLineText);
+                }
+                for (String[] txt : listOfLeftHandArray)
+                {
+                    if (txt.length == 2)
+                    {
+                        rest(Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 3)
+                    {
+                        playNote(txt[2], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 4)
+                    {
+                        playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 5)
+                    {
+                        playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 6)
+                    {
+                        playChord4(txt[2], txt[3], txt[4], txt[5], Integer.parseInt(txt[0]));
+                    }
                 }
             }
             catch (FileNotFoundException e)
@@ -151,19 +211,19 @@ public class AviciiLevels {
 
 
 
-    public void levels() throws InterruptedException
+    public void senbonzakura() throws InterruptedException
     {
         rest(1000);
-        combineLeftHandRightHand();
+        combine();
         System.out.println();
         rest(1000);
     }
 
 
-    public void combineLeftHandRightHand() throws InterruptedException {
+    public void combine() throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                rightHandTxt();
+                right();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -171,7 +231,15 @@ public class AviciiLevels {
 
         Thread thread2 = new Thread(() -> {
             try {
-                leftHandTxt();
+                left();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread thread3 = new Thread(() -> {
+            try {
+                middle();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -180,10 +248,12 @@ public class AviciiLevels {
         // Start the threads to play simultaneously
         thread1.start();
         thread2.start();
+        thread3.start();
 
         // Wait for both threads to finish
         thread1.join();
         thread2.join();
+        thread3.join();
     }
 
 
