@@ -18,7 +18,7 @@ public class MusicPlayer {
             System.out.println();
             System.out.println("********** AVICII - WAITING FOR LOVE **********");
             System.out.println();
-            music();
+            song();
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
@@ -35,19 +35,19 @@ public class MusicPlayer {
     }
 
 
-    public void music() throws InterruptedException
+    public void song() throws InterruptedException
     {
         midiController.rest(1000);
-        combineLeftHandRightHand();
+        combineThread();
         System.out.println();
         midiController.rest(1000);
     }
 
 
-    public void combineLeftHandRightHand() throws InterruptedException {
+    public void combineThread() throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                sheetMusicReader.rightHandTxt();
+                sheetMusicReader.pathOne();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -55,7 +55,7 @@ public class MusicPlayer {
 
         Thread thread2 = new Thread(() -> {
             try {
-                sheetMusicReader.leftHandTxt();
+                sheetMusicReader.pathTwo();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

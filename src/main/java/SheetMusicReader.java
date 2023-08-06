@@ -8,15 +8,16 @@ public class SheetMusicReader {
 
     private MidiController midiController = new MidiController();
 
-    public void rightHandTxt() throws InterruptedException
+
+    public void pathOne() throws InterruptedException
     {
-        int rightBarCounter = 0;
-        String[] files = {"src/main/java/SheetMusic/AviciiWaitingForLove/WaitingForLoveRight"};
+        int barCounter = 0;
+        String[] files = {"src/main/java/SheetMusic/Avicii/WaitingForLove/WaitingForLovePathOne"};
 
         for (int i = 0; i < files.length; i++)
         {
             File filePath = new File (files[i]);
-            List<String[]> listOfRightHandArray = new ArrayList<>();
+            List<String[]> listOfPathArray = new ArrayList<>();
 
             try (Scanner fileScanner = new Scanner (filePath))
             {
@@ -24,14 +25,14 @@ public class SheetMusicReader {
                 {
                     String lineText = fileScanner.nextLine();
                     String[] splitLineText = lineText.split(" ");
-                    listOfRightHandArray.add(splitLineText);
+                    listOfPathArray.add(splitLineText);
                 }
-                for (String[] txt : listOfRightHandArray)
+                for (String[] txt : listOfPathArray)
                 {
                     if (txt.length == 1)
                     {
-                        rightBarCounter++;
-                        System.out.print("\nBar " + rightBarCounter + ": ");
+                        barCounter++;
+                        System.out.print("\nBar " + barCounter + ": ");
                     }
                     else if (txt.length == 2)
                     {
@@ -58,14 +59,14 @@ public class SheetMusicReader {
         }
     }
 
-    public void leftHandTxt() throws InterruptedException
+    public void pathTwo() throws InterruptedException
     {
-        String[] files = {"src/main/java/SheetMusic/AviciiWaitingForLove/WaitingForLoveLeft"};
+        String[] files = {"src/main/java/SheetMusic/Avicii/WaitingForLove/WaitingForLovePathTwo"};
 
         for (int i = 0; i < files.length; i++)
         {
             File filePath = new File (files[i]);
-            List<String[]> listOfLeftHandArray = new ArrayList<>();
+            List<String[]> listOfPathArray = new ArrayList<>();
 
             try (Scanner fileScanner = new Scanner (filePath))
             {
@@ -73,9 +74,9 @@ public class SheetMusicReader {
                 {
                     String lineText = fileScanner.nextLine();
                     String[] splitLineText = lineText.split(" ");
-                    listOfLeftHandArray.add(splitLineText);
+                    listOfPathArray.add(splitLineText);
                 }
-                for (String[] txt : listOfLeftHandArray)
+                for (String[] txt : listOfPathArray)
                 {
                     if (txt.length == 2)
                     {

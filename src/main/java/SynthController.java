@@ -9,11 +9,9 @@ public class SynthController {
     private MidiChannel[] channels;
 
 
-
     public MidiChannel[] getChannels() {
         return channels;
     }
-
 
 
     // ********** OPEN / CLOSE SYNTH **********

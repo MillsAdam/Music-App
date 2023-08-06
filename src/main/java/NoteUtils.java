@@ -2,6 +2,7 @@ public class NoteUtils {
 
     private final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
+
     public int getMidiNumber(String noteWithOctave)
     {
         int octave = Integer.parseInt(noteWithOctave.substring(noteWithOctave.length() - 1));

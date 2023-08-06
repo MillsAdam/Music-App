@@ -35,7 +35,7 @@ public class MikuHatsuneSenbonzakura {
             System.out.println();
             System.out.println("********** MIKU HATSUNE - SENBONZAKURA **********");
             System.out.println();
-            senbonzakura();
+            song();
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
@@ -43,16 +43,16 @@ public class MikuHatsuneSenbonzakura {
         closeSynth();
     }
 
-    public void right() throws InterruptedException
+    public void pathOne() throws InterruptedException
     {
-        int rightBarCounter = 0;
+        int BarCounter = 0;
 
         // Page 1: 1 - 28
         // Page 2: 29 - 60
         // Page 3: 61 - 92
         // Page 4: 93 - 120
         // Page 5: 121 - 153
-        String[] files = {"src/main/java/SheetMusic/MikuHatsuneSenbonzakura/SenbonzakuraRPage1"};
+        String[] files = {"src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathOnePage1"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -71,8 +71,8 @@ public class MikuHatsuneSenbonzakura {
                 {
                     if (txt.length == 1)
                     {
-                        rightBarCounter++;
-                        System.out.print("\nBar " + rightBarCounter + ": ");
+                        BarCounter++;
+                        System.out.print("\nBar " + BarCounter + ": ");
                     }
                     else if (txt.length == 2)
                     {
@@ -103,14 +103,14 @@ public class MikuHatsuneSenbonzakura {
         }
     }
 
-    public void left() throws InterruptedException
+    public void pathTwo() throws InterruptedException
     {
         // Page 1: 1 - 28
         // Page 2: 29 - 60
         // Page 3: 61 - 92
         // Page 4: 93 - 120
         // Page 5: 121 - 153
-        String[] files = {"src/main/java/SheetMusic/MikuHatsuneSenbonzakura/SenbonzakuraLPage1"};
+        String[] files = {"src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathTwoPage1"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -156,14 +156,14 @@ public class MikuHatsuneSenbonzakura {
         }
     }
 
-    public void middle() throws InterruptedException
+    public void pathThree() throws InterruptedException
     {
         // Page 1: 1 - 28
         // Page 2: 29 - 60
         // Page 3: 61 - 92
         // Page 4: 93 - 120
         // Page 5: 121 - 153
-        String[] files = {"src/main/java/SheetMusic/MikuHatsuneSenbonzakura/SenbonzakuraMPage1"};
+        String[] files = {"src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathThreePage1"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -211,19 +211,19 @@ public class MikuHatsuneSenbonzakura {
 
 
 
-    public void senbonzakura() throws InterruptedException
+    public void song() throws InterruptedException
     {
         rest(1000);
-        combine();
+        combineThread();
         System.out.println();
         rest(1000);
     }
 
 
-    public void combine() throws InterruptedException {
+    public void combineThread() throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                right();
+                pathOne();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -231,7 +231,7 @@ public class MikuHatsuneSenbonzakura {
 
         Thread thread2 = new Thread(() -> {
             try {
-                left();
+                pathTwo();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -239,7 +239,7 @@ public class MikuHatsuneSenbonzakura {
 
         Thread thread3 = new Thread(() -> {
             try {
-                middle();
+                pathThree();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

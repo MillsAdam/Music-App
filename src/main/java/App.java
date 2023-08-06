@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class App {
 
     public static int INSTRUMENT_PIANO = 0;
+    public static int INSTRUMENT_FLUTE = 1; // ????????
     public static int INSTRUMENT_DRUM = 9;
 
     public static final int MIN_VOLUME = 0;

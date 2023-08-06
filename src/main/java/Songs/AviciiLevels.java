@@ -35,7 +35,7 @@ public class AviciiLevels {
             System.out.println();
             System.out.println("********** AVICII - LEVELS **********");
             System.out.println();
-            levels();
+            song();
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
@@ -43,21 +43,21 @@ public class AviciiLevels {
         closeSynth();
     }
 
-    public void rightHandTxt() throws InterruptedException
+    public void pathOne() throws InterruptedException
     {
-        int rightBarCounter = 0;
+        int barCounter = 0;
 
         // Page 1 = Bars 1- 16
         // Page 2 = Bars 17 - 40
         // Page 3 = Bars 41 - 60
         // Page 4 = Bars 61 - 77
         // Page 5 = Bars 78 - 100
-        String[] files = {"src/main/java/SheetMusic/AviciiLevels/LevelsRight"};
+        String[] files = {"src/main/java/SheetMusic/Avicii/Levels/LevelsPathOne"};
 
         for (int i = 0; i < files.length; i++)
         {
             File filePath = new File (files[i]);
-            List<String[]> listOfRightHandArray = new ArrayList<>();
+            List<String[]> listOfPathArray = new ArrayList<>();
 
             try (Scanner fileScanner = new Scanner (filePath))
             {
@@ -65,14 +65,14 @@ public class AviciiLevels {
                 {
                     String lineText = fileScanner.nextLine();
                     String[] splitLineText = lineText.split(" ");
-                    listOfRightHandArray.add(splitLineText);
+                    listOfPathArray.add(splitLineText);
                 }
-                for (String[] txt : listOfRightHandArray)
+                for (String[] txt : listOfPathArray)
                 {
                     if (txt.length == 1)
                     {
-                        rightBarCounter++;
-                        System.out.print("\nBar " + rightBarCounter + ": ");
+                        barCounter++;
+                        System.out.print("\nBar " + barCounter + ": ");
                     }
                     else if (txt.length == 2)
                     {
@@ -99,7 +99,7 @@ public class AviciiLevels {
         }
     }
 
-    public void leftHandTxt() throws InterruptedException
+    public void pathTwo() throws InterruptedException
     {
 
         // Page 1 = Bars 1- 16
@@ -107,12 +107,12 @@ public class AviciiLevels {
         // Page 3 = Bars 41 - 60
         // Page 4 = Bars 61 - 77
         // Page 5 = Bars 78 - 100
-        String[] files = {"src/main/java/SheetMusic/AviciiLevels/LevelsLeft"};
+        String[] files = {"src/main/java/SheetMusic/Avicii/Levels/LevelsPathTwo"};
 
         for (int i = 0; i < files.length; i++)
         {
             File filePath = new File (files[i]);
-            List<String[]> listOfLeftHandArray = new ArrayList<>();
+            List<String[]> listOfPathArray = new ArrayList<>();
 
             try (Scanner fileScanner = new Scanner (filePath))
             {
@@ -120,9 +120,9 @@ public class AviciiLevels {
                 {
                     String lineText = fileScanner.nextLine();
                     String[] splitLineText = lineText.split(" ");
-                    listOfLeftHandArray.add(splitLineText);
+                    listOfPathArray.add(splitLineText);
                 }
-                for (String[] txt : listOfLeftHandArray)
+                for (String[] txt : listOfPathArray)
                 {
                     if (txt.length == 2)
                     {
@@ -151,19 +151,19 @@ public class AviciiLevels {
 
 
 
-    public void levels() throws InterruptedException
+    public void song() throws InterruptedException
     {
         rest(1000);
-        combineLeftHandRightHand();
+        combineThread();
         System.out.println();
         rest(1000);
     }
 
 
-    public void combineLeftHandRightHand() throws InterruptedException {
+    public void combineThread() throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                rightHandTxt();
+                pathOne();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -171,7 +171,7 @@ public class AviciiLevels {
 
         Thread thread2 = new Thread(() -> {
             try {
-                leftHandTxt();
+                pathTwo();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

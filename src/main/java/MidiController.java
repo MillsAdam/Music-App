@@ -5,6 +5,7 @@ public class MidiController {
     private MusicPlayer musicPlayer;
 
 
+
     // ********** rest METHOD **********
     public static void rest(int duration) throws InterruptedException
     {
