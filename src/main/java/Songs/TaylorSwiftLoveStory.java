@@ -13,7 +13,7 @@ import java.util.Scanner;
 /*
  * https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiChannel.html
  */
-public class AviciiLevels {
+public class TaylorSwiftLoveStory {
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
@@ -22,16 +22,19 @@ public class AviciiLevels {
     int instrument;
     int volume;
 
-    public AviciiLevels(int instrument, int volume) {
+    public TaylorSwiftLoveStory(int instrument, int volume) {
 
         this.instrument = instrument;
         this.volume = volume;
         openSynth();
     }
 
-    public void run()
-    {
+    public void run(){
+
         try {
+            System.out.println();
+            System.out.println("********** AVICII - LEVELS **********");
+            System.out.println();
             song();
         } catch(InterruptedException e) {
             e.printStackTrace();

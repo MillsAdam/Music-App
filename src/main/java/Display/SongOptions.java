@@ -11,6 +11,8 @@ public class SongOptions {
     protected static final String AVICII_LEVELS = "Avicii - Levels";
     protected static final String AVICII_WAITING_FOR_LOVE = "Avicii - Waiting For Love";
     protected static final String MIKU_HATSUNE_SENBONZAKURA = "Miku Hatsune - Senbonzakura";
+    protected static final String TAYLOR_SWIFT_LOVE_STORY = "Taylor Swift - Love Story";
+    protected static final String DAVID_GUETTA_IM_GOOD_BLUE = "David Guetta - I'm Good (Blue)";
     protected static final String TEST_MUSIC = "Test Music";
     protected static final String MUSIC_PLAYER = "Music Player";
 
@@ -30,10 +32,13 @@ public class SongOptions {
         }
     }
 
+
     protected static final String[] SONG_CHOICE_OPTIONS = {
             AVICII_LEVELS,
             AVICII_WAITING_FOR_LOVE,
             MIKU_HATSUNE_SENBONZAKURA,
+            TAYLOR_SWIFT_LOVE_STORY,
+            DAVID_GUETTA_IM_GOOD_BLUE,
             TEST_MUSIC,
             MUSIC_PLAYER };
 
