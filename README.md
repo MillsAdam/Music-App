@@ -7,13 +7,13 @@ Play some music in Java 🎵🎵
 Run the main() method from the App class.
 You should hear 3 tones from a piano, then from a drum.
 
-The instrument playing the tones can be configured using the MusicPlayer constructor 
+The instrument playing the tones can be configured using the Songs.TestMusic constructor 
 
 ```
-public MusicPlayer(int instrument, int volume) {
+public Songs.TestMusic(int instrument, int volume) {
 ```
 
-In the MusicPlayer class, the `run()` method will play the tones specific in order from top to bottom:
+In the Songs.TestMusic class, the `run()` method will play the tones specific in order from top to bottom:
 
 ```
     public void run(){

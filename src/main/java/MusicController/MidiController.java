@@ -1,11 +1,12 @@
-import Utilities.SynthController;
-import Utilities.NoteUtils;
+package MusicController;
+
+import Songs.TestMusic;
 
 public class MidiController {
 
     private NoteUtils noteUtils = new NoteUtils();
     private SynthController synthController = new SynthController();
-    private MusicPlayer musicPlayer;
+    private TestMusic testMusic;
 
 
 
@@ -22,16 +23,16 @@ public class MidiController {
     public void playNote(String note, int durationMs) throws InterruptedException
     {
         System.out.print(note + " " );
-        playNote(note, musicPlayer.getVolume(), durationMs);
+        playNote(note, testMusic.getVolume(), durationMs);
     }
 
     public void playNote(String note, int volume, int durationMs) throws InterruptedException
     {
         int midiNote = noteUtils.getMidiNumber(note);
 
-        synthController.getChannels()[musicPlayer.getInstrument()].noteOn(midiNote, volume );
+        synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, volume );
         Thread.sleep( durationMs );
-        synthController.getChannels()[musicPlayer.getInstrument()].noteOff(midiNote);
+        synthController.getChannels()[testMusic.getInstrument()].noteOff(midiNote);
     }
 
 
@@ -40,7 +41,7 @@ public class MidiController {
     public void playChord2(String note1, String note2, int durationMs) throws InterruptedException
     {
         System.out.print(note1 + " " + note2 + " ");
-        playChord2(note1, note2, musicPlayer.getVolume(), durationMs);;
+        playChord2(note1, note2, testMusic.getVolume(), durationMs);;
     }
     public void playChord2(String note1, String note2, int volume, int durationMs) throws InterruptedException
     {
@@ -50,7 +51,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[musicPlayer.getInstrument()].noteOn(midiNote, volume);
+                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, volume);
             }
         }
         Thread.sleep(durationMs);
@@ -58,7 +59,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[musicPlayer.getInstrument()].noteOff(midiNote);
+                synthController.getChannels()[testMusic.getInstrument()].noteOff(midiNote);
             }
         }
     }
@@ -66,7 +67,7 @@ public class MidiController {
     public void playChord3(String note1, String note2, String note3, int durationMs) throws InterruptedException
     {
         System.out.print(note1 + " " + note2 + " " + note3 + " ");
-        playChord3(note1, note2, note3, musicPlayer.getVolume(), durationMs);;
+        playChord3(note1, note2, note3, testMusic.getVolume(), durationMs);;
     }
     public void playChord3(String note1, String note2, String note3, int volume, int durationMs) throws InterruptedException
     {
@@ -76,7 +77,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[musicPlayer.getInstrument()].noteOn(midiNote, volume);
+                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, volume);
             }
         }
         Thread.sleep(durationMs);
@@ -84,7 +85,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[musicPlayer.getInstrument()].noteOff(midiNote);
+                synthController.getChannels()[testMusic.getInstrument()].noteOff(midiNote);
             }
         }
     }
@@ -92,7 +93,7 @@ public class MidiController {
     public void playChord4(String note1, String note2, String note3, String note4, int durationMs) throws InterruptedException
     {
         System.out.print(note1 + " " + note2 + " " + note3 + " " + note4 + " ");
-        playChord4(note1, note2, note3, note4, musicPlayer.getVolume(), durationMs);;
+        playChord4(note1, note2, note3, note4, testMusic.getVolume(), durationMs);;
     }
 
     public void playChord4(String note1, String note2, String note3, String note4, int volume, int durationMs) throws InterruptedException
@@ -103,7 +104,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[musicPlayer.getInstrument()].noteOn(midiNote, volume);
+                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, volume);
             }
         }
         Thread.sleep(durationMs);
@@ -111,7 +112,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[musicPlayer.getInstrument()].noteOff(midiNote);
+                synthController.getChannels()[testMusic.getInstrument()].noteOff(midiNote);
             }
         }
     }

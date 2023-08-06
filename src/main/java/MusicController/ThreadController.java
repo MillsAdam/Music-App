@@ -1,4 +1,6 @@
-public class Threads {
+package MusicController;
+
+public class ThreadController {
 
     private SheetMusicReader sheetMusicReader = new SheetMusicReader();
 

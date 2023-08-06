@@ -1,9 +1,7 @@
 package Display;
 import Piano.PianoKeyboard;
-import Piano.TestMusic;
+import Piano.TestPianoHighlight;
 import Songs.*;
-
-import java.util.Map;
 
 public class SongChoice {
 
@@ -13,7 +11,7 @@ public class SongChoice {
 
     public static final int MIN_VOLUME = 0;
     public static final int MAX_VOLUME = 127;
-    public static final int MY_VOLUME = 100;
+    public static final int MY_VOLUME = 69;
 
     private static PianoKeyboard pianoKeyboard = new PianoKeyboard();
     private static ScannerInput scannerInput = new ScannerInput();
@@ -45,49 +43,39 @@ public class SongChoice {
         else if (input.equals("2"))
         {
             displaySong.displaySong(input);
-            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-            AviciiWaitingForLove player = new AviciiWaitingForLove(INSTRUMENT_PIANO, volume);
+            AviciiWaitingForLove player = new AviciiWaitingForLove(INSTRUMENT_PIANO, MY_VOLUME);
             player.run();
         }
         else if (input.equals("3"))
         {
             displaySong.displaySong(input);
-            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-            MikuHatsuneSenbonzakura player = new MikuHatsuneSenbonzakura(INSTRUMENT_PIANO, volume);
+            MikuHatsuneSenbonzakura player = new MikuHatsuneSenbonzakura(INSTRUMENT_PIANO, MY_VOLUME);
             player.run();
         }
         else if (input.equals("4"))
         {
             displaySong.displaySong(input);
-            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-            TaylorSwiftLoveStory player = new TaylorSwiftLoveStory(INSTRUMENT_PIANO, volume);
+            TaylorSwiftLoveStory player = new TaylorSwiftLoveStory(INSTRUMENT_PIANO, MY_VOLUME);
             player.run();
         }
         else if (input.equals("5"))
         {
             displaySong.displaySong(input);
-            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-            DavidGuettaImGoodBlue player = new DavidGuettaImGoodBlue(INSTRUMENT_PIANO, volume);
+            DavidGuettaImGoodBlue player = new DavidGuettaImGoodBlue(INSTRUMENT_PIANO, MY_VOLUME);
             player.run();
         }
         else if (input.equals("6"))
         {
             displaySong.displaySong(input);
-            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-            TestMusic player = new TestMusic(INSTRUMENT_PIANO, volume, pianoKeyboard);
+            TestPianoHighlight player = new TestPianoHighlight(INSTRUMENT_PIANO, MY_VOLUME, pianoKeyboard);
             player.run();
         }
-//        else if (input.equals("7"))
-//        {
-//            // Can't do shit because it's not in the main package
-//            int volume = (MIN_VOLUME + MAX_VOLUME) / 2;
-//            MusicPlayer player = new MusicPlayer(INSTRUMENT_PIANO, volume);
-//            player.run();
-//            for (int i = 1; i < songOptions.SONG_CHOICE_OPTIONS.length; i++)
-//            {
-//                System.out.println("********* " + songOptions.SONG_CHOICE_OPTIONS[i].toUpperCase() + " **********");
-//            }
-//        }
+        else if (input.equals("7"))
+        {
+            displaySong.displaySong(input);
+            TestMusic player = new TestMusic(INSTRUMENT_PIANO, MY_VOLUME);
+            player.run();
+        }
     }
 
 

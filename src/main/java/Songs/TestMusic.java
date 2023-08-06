@@ -1,14 +1,18 @@
-import Utilities.SynthController;
+package Songs;
 
-public class MusicPlayer {
+import MusicController.MidiController;
+import MusicController.ThreadController;
+import MusicController.SynthController;
+
+public class TestMusic {
 
     private int instrument;
     private int volume;
     private SynthController synthController = new SynthController();
-    private Threads threads = new Threads();
+    private ThreadController threadController = new ThreadController();
     private MidiController midiController = new MidiController();
 
-    public MusicPlayer(int instrument, int volume) {
+    public TestMusic(int instrument, int volume) {
         this.instrument = instrument;
         this.volume = volume;
         synthController.openSynth();
@@ -17,9 +21,6 @@ public class MusicPlayer {
     public void run()
     {
         try {
-            System.out.println();
-            System.out.println("********** AVICII - WAITING FOR LOVE **********");
-            System.out.println();
             song();
         } catch(InterruptedException e) {
             e.printStackTrace();
@@ -40,7 +41,7 @@ public class MusicPlayer {
     public void song() throws InterruptedException
     {
         midiController.rest(1000);
-        threads.combineThread();
+        threadController.combineThread();
         System.out.println();
         midiController.rest(1000);
     }

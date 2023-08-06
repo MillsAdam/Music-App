@@ -1,4 +1,4 @@
-package Utilities;
+package MusicController;
 
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;

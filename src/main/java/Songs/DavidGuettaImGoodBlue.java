@@ -160,6 +160,63 @@ public class DavidGuettaImGoodBlue {
         }
     }
 
+    public void pathThree() throws InterruptedException
+    {
+
+        // Page 1 = Bars 1- 20
+        // Page 2 = Bars 21 - 44
+        // Page 3 = Bars 45 - 68
+        // Page 4 = Bars 69 - 92
+        String[] files = {"src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathThreePage1",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathThreePage2",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathThreePage3",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathThreePage4",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathThree"};
+
+        for (int i = 0; i < files.length-1; i++)
+        {
+            File filePath = new File (files[i]);
+            List<String[]> listOfPathArray = new ArrayList<>();
+
+            try (Scanner fileScanner = new Scanner (filePath))
+            {
+                while (fileScanner.hasNextLine())
+                {
+                    String lineText = fileScanner.nextLine();
+                    String[] splitLineText = lineText.split(" ");
+                    listOfPathArray.add(splitLineText);
+                }
+                for (String[] txt : listOfPathArray)
+                {
+                    if (txt.length == 2)
+                    {
+                        rest(Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 3)
+                    {
+                        playNote(txt[2], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 4)
+                    {
+                        playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 5)
+                    {
+                        playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 6)
+                    {
+                        playChord4(txt[2], txt[3], txt[4], txt[5], Integer.parseInt(txt[0]));
+                    }
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
 
 
     public void song() throws InterruptedException
@@ -188,13 +245,23 @@ public class DavidGuettaImGoodBlue {
             }
         });
 
+        Thread thread3 = new Thread(() -> {
+            try {
+                pathThree();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
         // Start the threads to play simultaneously
         thread1.start();
         thread2.start();
+        thread3.start();
 
         // Wait for both threads to finish
         thread1.join();
         thread2.join();
+        thread3.join();
     }
 
 
