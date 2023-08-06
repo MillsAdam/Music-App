@@ -89,6 +89,10 @@ public class DavidGuettaImGoodBlue {
                     {
                         playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
                     }
+                    else if (txt.length == 6)
+                    {
+                        playChord4(txt[2], txt[3], txt[4], txt[5], Integer.parseInt(txt[0]));
+                    }
                 }
             }
             catch (FileNotFoundException e)
@@ -140,6 +144,10 @@ public class DavidGuettaImGoodBlue {
                     else if (txt.length == 5)
                     {
                         playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 6)
+                    {
+                        playChord4(txt[2], txt[3], txt[4], txt[5], Integer.parseInt(txt[0]));
                     }
                 }
             }

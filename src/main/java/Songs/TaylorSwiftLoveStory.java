@@ -44,20 +44,20 @@ public class TaylorSwiftLoveStory {
     {
         int barCounter = 0;
 
-        // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 35
+        // Page 1 = Bars 1- 16 Complete
+        // Page 2 = Bars 17 - 35 Complete
         // Page 3 = Bars 36 - 54
         // Page 4 = Bars 55 - 74
         // Page 5 = Bars 75 - 97
         // Page 6 = Bars 98 - 116
-        String[] files = {"src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage1",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage2",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage3",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage4",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage5",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage6"};
+        String[] files = {"src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage1",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage2",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage3",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage4",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage5",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage6"};
 
-        for (int i = 0; i < files.length; i++)
+        for (int i = 2; i < files.length; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfPathArray = new ArrayList<>();
@@ -93,6 +93,10 @@ public class TaylorSwiftLoveStory {
                     {
                         playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
                     }
+                    else if (txt.length == 6)
+                    {
+                        playChord4(txt[2], txt[3], txt[4], txt[5], Integer.parseInt(txt[0]));
+                    }
                 }
             }
             catch (FileNotFoundException e)
@@ -105,20 +109,20 @@ public class TaylorSwiftLoveStory {
     public void pathTwo() throws InterruptedException
     {
 
-        // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 35
+        // Page 1 = Bars 1- 16 Complete
+        // Page 2 = Bars 17 - 35 Complete
         // Page 3 = Bars 36 - 54
         // Page 4 = Bars 55 - 74
         // Page 5 = Bars 75 - 97
         // Page 6 = Bars 98 - 116
-        String[] files = {"src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage1",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage2",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage3",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage4",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage5",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage6"};
+        String[] files = {"src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage1",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage2",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage3",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage4",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage5",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage6"};
 
-        for (int i = 0; i < files.length; i++)
+        for (int i = 2; i < files.length; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfPathArray = new ArrayList<>();
@@ -148,6 +152,10 @@ public class TaylorSwiftLoveStory {
                     else if (txt.length == 5)
                     {
                         playChord3(txt[2], txt[3], txt[4], Integer.parseInt(txt[0]));
+                    }
+                    else if (txt.length == 6)
+                    {
+                        playChord4(txt[2], txt[3], txt[4], txt[5], Integer.parseInt(txt[0]));
                     }
                 }
             }
