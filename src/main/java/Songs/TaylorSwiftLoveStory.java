@@ -55,9 +55,10 @@ public class TaylorSwiftLoveStory {
                 "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage3",
                 "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage4",
                 "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage5",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage6"};
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOnePage6",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathOne"};
 
-        for (int i = 2; i < files.length; i++)
+        for (int i = 6; i < files.length; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfPathArray = new ArrayList<>();
@@ -120,9 +121,10 @@ public class TaylorSwiftLoveStory {
                 "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage3",
                 "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage4",
                 "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage5",
-                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage6"};
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwoPage6",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/LoveStoryPathTwo"};
 
-        for (int i = 2; i < files.length; i++)
+        for (int i = 6; i < files.length; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfPathArray = new ArrayList<>();

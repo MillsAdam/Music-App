@@ -53,9 +53,10 @@ public class MikuHatsuneSenbonzakura {
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathOnePage2",
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathOnePage3",
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathOnePage4",
-                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathOnePage5"};
+                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathOnePage5",
+                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathOne"};
 
-        for (int i = 1; i < files.length; i++)
+        for (int i = 5; i < files.length; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfRightHandArray = new ArrayList<>();
@@ -115,9 +116,10 @@ public class MikuHatsuneSenbonzakura {
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathTwoPage2",
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathTwoPage3",
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathTwoPage4",
-                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathTwoPage5"};
+                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathTwoPage5",
+                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathTwo"};
 
-        for (int i = 1; i < files.length; i++)
+        for (int i = 5; i < files.length; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfLeftHandArray = new ArrayList<>();
@@ -172,9 +174,10 @@ public class MikuHatsuneSenbonzakura {
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathThreePage2",
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathThreePage3",
                 "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathThreePage4",
-                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathThreePage5"};
+                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathThreePage5",
+                "src/main/java/SheetMusic/MikuHatsune/Senbonzakura/SenbonzakuraPathThree"};
 
-        for (int i = 1; i < files.length; i++)
+        for (int i = 5; i < files.length; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfLeftHandArray = new ArrayList<>();

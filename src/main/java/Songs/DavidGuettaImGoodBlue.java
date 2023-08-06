@@ -51,9 +51,10 @@ public class DavidGuettaImGoodBlue {
         String[] files = {"src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage1",
                 "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage2",
                 "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage3",
-                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage4"};
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage4",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOne"};
 
-        for (int i = 0; i < files.length; i++)
+        for (int i = 0; i < files.length-1; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfPathArray = new ArrayList<>();
@@ -112,9 +113,10 @@ public class DavidGuettaImGoodBlue {
         String[] files = {"src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage1",
                 "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage2",
                 "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage3",
-                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage4"};
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage4",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwo"};
 
-        for (int i = 0; i < files.length; i++)
+        for (int i = 0; i < files.length-1; i++)
         {
             File filePath = new File (files[i]);
             List<String[]> listOfPathArray = new ArrayList<>();
