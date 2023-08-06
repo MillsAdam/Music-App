@@ -29,12 +29,9 @@ public class TaylorSwiftLoveStory {
         openSynth();
     }
 
-    public void run(){
-
+    public void run()
+    {
         try {
-            System.out.println();
-            System.out.println("********** AVICII - LEVELS **********");
-            System.out.println();
             song();
         } catch(InterruptedException e) {
             e.printStackTrace();
@@ -48,11 +45,17 @@ public class TaylorSwiftLoveStory {
         int barCounter = 0;
 
         // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 40
-        // Page 3 = Bars 41 - 60
-        // Page 4 = Bars 61 - 77
-        // Page 5 = Bars 78 - 100
-        String[] files = {"src/main/java/SheetMusic/Avicii/Levels/LevelsPathOne"};
+        // Page 2 = Bars 17 - 35
+        // Page 3 = Bars 36 - 54
+        // Page 4 = Bars 55 - 74
+        // Page 5 = Bars 75 - 97
+        // Page 6 = Bars 98 - 116
+        String[] files = {"src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage1",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage2",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage3",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage4",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage5",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageOnePage6"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -103,11 +106,17 @@ public class TaylorSwiftLoveStory {
     {
 
         // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 40
-        // Page 3 = Bars 41 - 60
-        // Page 4 = Bars 61 - 77
-        // Page 5 = Bars 78 - 100
-        String[] files = {"src/main/java/SheetMusic/Avicii/Levels/LevelsPathTwo"};
+        // Page 2 = Bars 17 - 35
+        // Page 3 = Bars 36 - 54
+        // Page 4 = Bars 55 - 74
+        // Page 5 = Bars 75 - 97
+        // Page 6 = Bars 98 - 116
+        String[] files = {"src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage1",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage2",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage3",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage4",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage5",
+                "src/main/java/SheetMusic/TaylorSwift/LoveStory/PageTwoPage6"};
 
         for (int i = 0; i < files.length; i++)
         {

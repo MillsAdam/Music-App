@@ -29,12 +29,9 @@ public class MikuHatsuneSenbonzakura {
         openSynth();
     }
 
-    public void run(){
-
+    public void run()
+    {
         try {
-            System.out.println();
-            System.out.println("********** MIKU HATSUNE - SENBONZAKURA **********");
-            System.out.println();
             song();
         } catch(InterruptedException e) {
             e.printStackTrace();

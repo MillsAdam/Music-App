@@ -29,12 +29,9 @@ public class DavidGuettaImGoodBlue {
         openSynth();
     }
 
-    public void run(){
-
+    public void run()
+    {
         try {
-            System.out.println();
-            System.out.println("********** AVICII - LEVELS **********");
-            System.out.println();
             song();
         } catch(InterruptedException e) {
             e.printStackTrace();
@@ -47,12 +44,14 @@ public class DavidGuettaImGoodBlue {
     {
         int barCounter = 0;
 
-        // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 40
-        // Page 3 = Bars 41 - 60
-        // Page 4 = Bars 61 - 77
-        // Page 5 = Bars 78 - 100
-        String[] files = {"src/main/java/SheetMusic/Avicii/Levels/LevelsPathOne"};
+        // Page 1 = Bars 1- 20
+        // Page 2 = Bars 21 - 44
+        // Page 3 = Bars 45 - 68
+        // Page 4 = Bars 69 - 92
+        String[] files = {"src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage1",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage2",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage3",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathOnePage4"};
 
         for (int i = 0; i < files.length; i++)
         {
@@ -102,12 +101,14 @@ public class DavidGuettaImGoodBlue {
     public void pathTwo() throws InterruptedException
     {
 
-        // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 40
-        // Page 3 = Bars 41 - 60
-        // Page 4 = Bars 61 - 77
-        // Page 5 = Bars 78 - 100
-        String[] files = {"src/main/java/SheetMusic/Avicii/Levels/LevelsPathTwo"};
+        // Page 1 = Bars 1- 20
+        // Page 2 = Bars 21 - 44
+        // Page 3 = Bars 45 - 68
+        // Page 4 = Bars 69 - 92
+        String[] files = {"src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage1",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage2",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage3",
+                "src/main/java/SheetMusic/DavidGuetta/ImGoodBlue/ImGoodBluePathTwoPage4"};
 
         for (int i = 0; i < files.length; i++)
         {

@@ -29,12 +29,9 @@ public class AviciiWaitingForLove {
         openSynth();
     }
 
-    public void run(){
-
+    public void run()
+    {
         try {
-            System.out.println();
-            System.out.println("********** AVICII - WAITING FOR LOVE **********");
-            System.out.println();
             song();
         } catch(InterruptedException e) {
             e.printStackTrace();
