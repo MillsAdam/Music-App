@@ -1,3 +1,5 @@
+package Utilities;
+
 public class NoteUtils {
 
     private final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};

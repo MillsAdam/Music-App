@@ -1,3 +1,6 @@
+import Utilities.SynthController;
+import Utilities.NoteUtils;
+
 public class MidiController {
 
     private NoteUtils noteUtils = new NoteUtils();

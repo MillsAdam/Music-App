@@ -1,3 +1,5 @@
+import Utilities.SynthController;
+
 public class MusicPlayer {
 
     private int instrument;
