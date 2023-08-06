@@ -3,7 +3,6 @@ package Display;
 public class DisplayOptions {
     private static SongOptions songOptions = new SongOptions();
 
-
     public void displaySongs()
     {
         System.out.println("Please pick a song");

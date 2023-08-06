@@ -1,5 +1,7 @@
 package Songs;
 
+import MusicController.SongController;
+
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
@@ -13,12 +15,21 @@ import java.util.Scanner;
 /*
  * https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiChannel.html
  */
-public class AviciiLevels {
+public class AviciiLevels implements SongController {
 
     final String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
     Synthesizer synth;
     MidiChannel[] channels;
+
+    public int getInstrument() {
+        return instrument;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
     int instrument;
     int volume;
 

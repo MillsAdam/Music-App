@@ -1,10 +1,13 @@
 package Songs;
 
 import MusicController.MidiController;
+import MusicController.SongController;
 import MusicController.ThreadController;
 import MusicController.SynthController;
 
-public class TestMusic {
+public class TestMusic implements SongController {
+
+
 
     private int instrument;
     private int volume;
@@ -32,7 +35,6 @@ public class TestMusic {
     public int getInstrument() {
         return instrument;
     }
-
     public int getVolume() {
         return volume;
     }

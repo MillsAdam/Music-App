@@ -30,7 +30,7 @@ public class MidiController {
     {
         int midiNote = noteUtils.getMidiNumber(note);
 
-        synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, volume );
+        synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, testMusic.getVolume() );
         Thread.sleep( durationMs );
         synthController.getChannels()[testMusic.getInstrument()].noteOff(midiNote);
     }
@@ -51,7 +51,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, volume);
+                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, testMusic.getVolume());
             }
         }
         Thread.sleep(durationMs);
@@ -77,7 +77,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, volume);
+                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, testMusic.getVolume());
             }
         }
         Thread.sleep(durationMs);
@@ -104,7 +104,7 @@ public class MidiController {
         {
             if (midiNote != -1)
             {
-                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, volume);
+                synthController.getChannels()[testMusic.getInstrument()].noteOn(midiNote, testMusic.getVolume());
             }
         }
         Thread.sleep(durationMs);
