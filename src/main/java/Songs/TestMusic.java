@@ -18,17 +18,16 @@ public class TestMusic implements SongController {
     public TestMusic(int instrument, int volume) {
         this.instrument = instrument;
         this.volume = volume;
-        synthController.openSynth();
     }
 
     public void run()
     {
+        synthController.openSynth();
         try {
             song();
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
-
         synthController.closeSynth();
     }
 

@@ -34,20 +34,18 @@ public class AviciiWaitingForLove implements SongController {
     int volume;
 
     public AviciiWaitingForLove(int instrument, int volume) {
-
         this.instrument = instrument;
         this.volume = volume;
-        openSynth();
     }
 
     public void run()
     {
+        openSynth();
         try {
             song();
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
-
         closeSynth();
     }
 

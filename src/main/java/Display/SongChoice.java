@@ -10,7 +10,6 @@ public class SongChoice {
     public static final int MY_VOLUME = 69;
 
     private static ScannerInput scannerInput = new ScannerInput();
-    private static SongOptions songOptions = new SongOptions();
     private static DisplaySong displaySong = new DisplaySong();
 
     public void chooseSong()

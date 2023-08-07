@@ -31,15 +31,14 @@ public class TestPianoHighlight implements SongController {
     private PianoKeyboard pianoKeyboard;
 
     public TestPianoHighlight(int instrument, int volume, PianoKeyboard pianoKeyboard) {
-
         this.instrument = instrument;
         this.volume = volume;
         this.pianoKeyboard = pianoKeyboard;
-        openSynth();
     }
 
-    public void run(){
-
+    public void run()
+    {
+        openSynth();
         try {
             System.out.println();
             System.out.println("********** Test Music **********");
@@ -48,7 +47,6 @@ public class TestPianoHighlight implements SongController {
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
-
         closeSynth();
     }
 
