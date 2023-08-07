@@ -51,13 +51,9 @@ public class AviciiLevels implements SongController {
 
     public void pathOne() throws InterruptedException
     {
+        rest(1000);
         int barCounter = 0;
 
-        // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 40
-        // Page 3 = Bars 41 - 60
-        // Page 4 = Bars 61 - 77
-        // Page 5 = Bars 78 - 100
         String[] files = {"src/main/java/SheetMusic/Avicii/Levels/LevelsPathOne"};
 
         for (int i = 0; i < files.length; i++)
@@ -107,16 +103,13 @@ public class AviciiLevels implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
     public void pathTwo() throws InterruptedException
     {
+        rest(1000);
 
-        // Page 1 = Bars 1- 16
-        // Page 2 = Bars 17 - 40
-        // Page 3 = Bars 41 - 60
-        // Page 4 = Bars 61 - 77
-        // Page 5 = Bars 78 - 100
         String[] files = {"src/main/java/SheetMusic/Avicii/Levels/LevelsPathTwo"};
 
         for (int i = 0; i < files.length; i++)
@@ -161,16 +154,15 @@ public class AviciiLevels implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
 
 
     public void song() throws InterruptedException
     {
-        rest(1000);
         combineThread();
         System.out.println();
-        rest(1000);
     }
 
 

@@ -15,6 +15,7 @@ public class SheetMusicReader {
 
     public void pathOne() throws InterruptedException
     {
+        midiController.rest(1000);
         int barCounter = 0;
         String[] files = {"src/main/java/SheetMusic/Avicii/WaitingForLove/WaitingForLovePathOne"};
 
@@ -61,10 +62,12 @@ public class SheetMusicReader {
                 throw new RuntimeException(e);
             }
         }
+        midiController.rest(1000);
     }
 
     public void pathTwo() throws InterruptedException
     {
+        midiController.rest(1000);
         String[] files = {"src/main/java/SheetMusic/Avicii/WaitingForLove/WaitingForLovePathTwo"};
 
         for (int i = 0; i < files.length; i++)
@@ -92,7 +95,7 @@ public class SheetMusicReader {
                     }
                     else if (txt.length == 4)
                     {
-                        midiController.playChord2(txt[2], txt[3], Integer.parseInt(txt[0]));
+                        midiController.playChord2(txt[2], txt[3], Integer.parseInt(txt[0])); // NullPointerException
                     }
                     else if (txt.length == 5)
                     {
@@ -105,6 +108,7 @@ public class SheetMusicReader {
                 throw new RuntimeException(e);
             }
         }
+        midiController.rest(1000);
     }
 
 }

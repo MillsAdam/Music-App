@@ -51,6 +51,7 @@ public class TaylorSwiftLoveStory implements SongController {
 
     public void pathOne() throws InterruptedException
     {
+        rest(1000);
         int barCounter = 0;
 
         // Page 1 = Bars 1- 16 Complete
@@ -114,10 +115,12 @@ public class TaylorSwiftLoveStory implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
     public void pathTwo() throws InterruptedException
     {
+        rest(1000);
 
         // Page 1 = Bars 1- 16 Complete
         // Page 2 = Bars 17 - 35 Complete
@@ -175,16 +178,15 @@ public class TaylorSwiftLoveStory implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
 
 
     public void song() throws InterruptedException
     {
-        rest(1000);
         combineThread();
         System.out.println();
-        rest(1000);
     }
 
 

@@ -36,7 +36,6 @@ public class DavidGuettaImGoodBlue implements SongController {
     public DavidGuettaImGoodBlue(int instrument, int volume) {
         this.instrument = instrument;
         this.volume = volume;
-
     }
 
     public void run()
@@ -52,6 +51,7 @@ public class DavidGuettaImGoodBlue implements SongController {
 
     public void pathOne() throws InterruptedException
     {
+        rest(1000);
         int barCounter = 0;
 
         // Page 1 = Bars 1- 20
@@ -111,10 +111,12 @@ public class DavidGuettaImGoodBlue implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
     public void pathTwo() throws InterruptedException
     {
+        rest(1000);
 
         // Page 1 = Bars 1- 20
         // Page 2 = Bars 21 - 44
@@ -168,10 +170,12 @@ public class DavidGuettaImGoodBlue implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
     public void pathThree() throws InterruptedException
     {
+        rest(1000);
 
         // Page 1 = Bars 1- 20
         // Page 2 = Bars 21 - 44
@@ -225,16 +229,15 @@ public class DavidGuettaImGoodBlue implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
 
 
     public void song() throws InterruptedException
     {
-        rest(1000);
         combineThread();
         System.out.println();
-        rest(1000);
     }
 
 

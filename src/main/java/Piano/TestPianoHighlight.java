@@ -41,7 +41,7 @@ public class TestPianoHighlight implements SongController {
         openSynth();
         try {
             System.out.println();
-            System.out.println("********** Test Music **********");
+            System.out.println("********** Test Piano Highlight **********");
             System.out.println();
             playTest();
         } catch(InterruptedException e) {
@@ -56,6 +56,7 @@ public class TestPianoHighlight implements SongController {
     {
         new Thread(() -> {
             try {
+                rest(1000);
                 playNote("D3", 476);
                 playNote("D4", 476);
                 playNote("D5", 476);

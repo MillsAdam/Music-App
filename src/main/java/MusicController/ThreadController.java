@@ -15,7 +15,7 @@ public class ThreadController {
 
         Thread thread2 = new Thread(() -> {
             try {
-                sheetMusicReader.pathTwo();
+                sheetMusicReader.pathTwo(); // NullPointerException
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

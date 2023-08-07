@@ -51,6 +51,7 @@ public class AviciiWaitingForLove implements SongController {
 
     public void pathOne() throws InterruptedException
     {
+        rest(1000);
         int barCounter = 0;
 
         String[] files = {"src/main/java/SheetMusic/Avicii/WaitingForLove/WaitingForLovePathOne"};
@@ -102,10 +103,12 @@ public class AviciiWaitingForLove implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
     public void pathTwo() throws InterruptedException
     {
+        rest(1000);
 
         String[] files = {"src/main/java/SheetMusic/Avicii/WaitingForLove/WaitingForLovePathTwo"};
 
@@ -151,16 +154,15 @@ public class AviciiWaitingForLove implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
 
 
     public void song() throws InterruptedException
     {
-        rest(1000);
         combineThread();
         System.out.println();
-        rest(1000);
     }
 
 

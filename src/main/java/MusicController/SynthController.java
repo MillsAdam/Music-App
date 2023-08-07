@@ -8,13 +8,18 @@ import javax.sound.midi.Synthesizer;
 public class SynthController {
 
     private Synthesizer synth;
+
+
+
     private MidiChannel[] channels;
 
 
     public MidiChannel[] getChannels() {
         return channels;
     }
-
+    public void setChannels(MidiChannel[] channels) {
+        this.channels = channels;
+    }
 
     // ********** OPEN / CLOSE SYNTH **********
     public void openSynth()

@@ -7,13 +7,12 @@ import MusicController.SynthController;
 
 public class TestMusic implements SongController {
 
-
-
     private int instrument;
     private int volume;
     private SynthController synthController = new SynthController();
     private ThreadController threadController = new ThreadController();
     private MidiController midiController = new MidiController();
+
 
     public TestMusic(int instrument, int volume) {
         this.instrument = instrument;
@@ -31,6 +30,13 @@ public class TestMusic implements SongController {
         synthController.closeSynth();
     }
 
+    public void song() throws InterruptedException
+    {
+        threadController.combineThread();
+        System.out.println();
+    }
+
+
     public int getInstrument() {
         return instrument;
     }
@@ -38,14 +44,16 @@ public class TestMusic implements SongController {
         return volume;
     }
 
-
-    public void song() throws InterruptedException
+    public void setInstrument(int instrument)
     {
-        midiController.rest(1000);
-        threadController.combineThread();
-        System.out.println();
-        midiController.rest(1000);
+        this.instrument = instrument;
     }
+    public void setVolume(int volume)
+    {
+        this.volume = volume;
+    }
+
+
 
 
 

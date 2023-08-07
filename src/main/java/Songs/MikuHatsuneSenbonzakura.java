@@ -36,7 +36,6 @@ public class MikuHatsuneSenbonzakura implements SongController {
     public MikuHatsuneSenbonzakura(int instrument, int volume) {
         this.instrument = instrument;
         this.volume = volume;
-
     }
 
     public void run()
@@ -52,6 +51,7 @@ public class MikuHatsuneSenbonzakura implements SongController {
 
     public void pathOne() throws InterruptedException
     {
+        rest(1000);
         int BarCounter = 0;
 
         // Page 1: 1 - 28
@@ -113,10 +113,13 @@ public class MikuHatsuneSenbonzakura implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
     public void pathTwo() throws InterruptedException
     {
+        rest(1000);
+
         // Page 1: 1 - 28
         // Page 2: 29 - 60
         // Page 3: 61 - 92
@@ -171,10 +174,13 @@ public class MikuHatsuneSenbonzakura implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
     public void pathThree() throws InterruptedException
     {
+        rest(1000);
+
         // Page 1: 1 - 28
         // Page 2: 29 - 60
         // Page 3: 61 - 92
@@ -229,16 +235,15 @@ public class MikuHatsuneSenbonzakura implements SongController {
                 throw new RuntimeException(e);
             }
         }
+        rest(1000);
     }
 
 
 
     public void song() throws InterruptedException
     {
-        rest(1000);
         combineThread();
         System.out.println();
-        rest(1000);
     }
 
 
