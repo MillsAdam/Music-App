@@ -6,6 +6,7 @@ public class MidiController {
     private NoteUtils noteUtils = new NoteUtils();
     private SynthController synthController = new SynthController();
     private TestMusic testMusic;
+    private SongController songController; // ?? use this for getVolume() and getInstrument?
 
 
 
