@@ -11,7 +11,7 @@ public class TestMusic implements SongController {
     private int volume;
     private SynthController synthController = new SynthController();
     private ThreadController threadController = new ThreadController();
-    private MidiController midiController = new MidiController();
+    private MidiController midiController; // CHANGED = new MidiController();
 
 
     public TestMusic(int instrument, int volume) {
@@ -32,7 +32,8 @@ public class TestMusic implements SongController {
 
     public void song() throws InterruptedException
     {
-        threadController.combineThread();
+        // CHANGED
+        threadController.combineThread(this, synthController);
         System.out.println();
     }
 

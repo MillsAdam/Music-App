@@ -1,13 +1,18 @@
 package MusicController;
 
+// CHANGED
+import Songs.TestMusic;
+
+
 public class ThreadController {
 
     private SheetMusicReader sheetMusicReader = new SheetMusicReader();
 
-    public void combineThread() throws InterruptedException {
+    // CHANGED
+    public void combineThread(TestMusic testMusic, SynthController controller) throws InterruptedException {
         Thread thread1 = new Thread(() -> {
             try {
-                sheetMusicReader.pathOne();
+                sheetMusicReader.pathOne(testMusic, controller); // CHANGED
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -15,7 +20,7 @@ public class ThreadController {
 
         Thread thread2 = new Thread(() -> {
             try {
-                sheetMusicReader.pathTwo(); // NullPointerException
+                sheetMusicReader.pathTwo(testMusic, controller); // CHANGED
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

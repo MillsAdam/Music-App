@@ -1,6 +1,8 @@
 package MusicController;
 
 import MusicController.MidiController;
+// CHANGED
+import Songs.TestMusic;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,11 +12,13 @@ import java.util.Scanner;
 
 public class SheetMusicReader {
 
-    private MidiController midiController = new MidiController();
+    private MidiController midiController; // CHANGED = new MidiController();
 
-
-    public void pathOne() throws InterruptedException
+    // CHANGED
+    public void pathOne(TestMusic testMusic, SynthController controller) throws InterruptedException
     {
+        // CHANGED
+        this.midiController = new MidiController(testMusic, controller);
         midiController.rest(1000);
         int barCounter = 0;
         String[] files = {"src/main/java/SheetMusic/Avicii/WaitingForLove/WaitingForLovePathOne"};
@@ -65,8 +69,11 @@ public class SheetMusicReader {
         midiController.rest(1000);
     }
 
-    public void pathTwo() throws InterruptedException
+    // CHANGED
+    public void pathTwo(TestMusic testMusic, SynthController controller) throws InterruptedException
     {
+        // CHANGED
+        this.midiController = new MidiController(testMusic, controller);
         midiController.rest(1000);
         String[] files = {"src/main/java/SheetMusic/Avicii/WaitingForLove/WaitingForLovePathTwo"};
 

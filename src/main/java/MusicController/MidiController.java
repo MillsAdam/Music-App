@@ -4,9 +4,16 @@ import Songs.TestMusic;
 
 public class MidiController {
     private NoteUtils noteUtils = new NoteUtils();
-    private SynthController synthController = new SynthController();
+    private SynthController synthController; //CHANGED = new SynthController();
     private TestMusic testMusic;
     private SongController songController; // ?? use this for getVolume() and getInstrument?
+
+    // CHANGED
+    public MidiController(TestMusic testMusic, SynthController controller)
+    {
+        this.synthController = controller;
+        this.testMusic = testMusic;
+    }
 
 
 
